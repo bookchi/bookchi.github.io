@@ -108,20 +108,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="fuubar2">
-<meta property="og:url" content="https://bookchi.github.io/index.html">
+  <meta name="description" content="mysql介绍及操作增删语句 information_schema是一个很重要的库，information_schema.tables  mysql的一些函数 12345678910system_user() # 系统用户名user()	# 用户名	----current_usersession_user()	# 连接数据库的用户名database()	# 数据库名	-----version()">
+<meta name="keywords" content="sql注入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql注入">
+<meta property="og:url" content="https://bookchi.github.io/2019/03/24/mysql注入/index.html">
 <meta property="og:site_name" content="fuubar2">
+<meta property="og:description" content="mysql介绍及操作增删语句 information_schema是一个很重要的库，information_schema.tables  mysql的一些函数 12345678910system_user() # 系统用户名user()	# 用户名	----current_usersession_user()	# 连接数据库的用户名database()	# 数据库名	-----version()">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-24T09:27:30.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fuubar2">
+<meta name="twitter:title" content="mysql注入">
+<meta name="twitter:description" content="mysql介绍及操作增删语句 information_schema是一个很重要的库，information_schema.tables  mysql的一些函数 12345678910system_user() # 系统用户名user()	# 用户名	----current_usersession_user()	# 连接数据库的用户名database()	# 数据库名	-----version()">
 
 
 
 
 
 
-  <link rel="canonical" href="https://bookchi.github.io/"/>
+  <link rel="canonical" href="https://bookchi.github.io/2019/03/24/mysql注入/"/>
 
 
 
@@ -131,7 +136,7 @@
   };
 </script>
 
-  <title>fuubar2</title>
+  <title>mysql注入 | fuubar2</title>
   
 
 
@@ -178,8 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/bookchi" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -217,7 +221,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
   </li>
@@ -277,9 +281,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -311,11 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/24/mysql注入/" itemprop="url">
-                  mysql注入
-                </a>
+          <h1 class="post-title" itemprop="name headline">mysql注入
               
             
           </h1>
@@ -378,9 +378,7 @@
       
 
       
-        
-          
-            <h4 id="mysql介绍及操作"><a href="#mysql介绍及操作" class="headerlink" title="mysql介绍及操作"></a>mysql介绍及操作</h4><p>增删语句</p>
+        <h4 id="mysql介绍及操作"><a href="#mysql介绍及操作" class="headerlink" title="mysql介绍及操作"></a>mysql介绍及操作</h4><p>增删语句</p>
 <p>information_schema是一个很重要的库，information_schema.tables</p>
 <ul>
 <li><p>mysql的一些函数</p>
@@ -473,8 +471,6 @@
 <p>mysql显错注入的了解；</p>
 </blockquote>
 
-          
-        
       
     </div>
 
@@ -486,6 +482,8 @@
 
     <div>
       
+        
+      
     </div>
 
     
@@ -496,325 +494,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bookchi.github.io/2019/03/24/解析应用程序—爬取站点/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fuubar">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fuubar2">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/24/解析应用程序—爬取站点/" itemprop="url">
-                  解析应用程序——BurpSuite爬取站点
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-24 14:01:46 / Modified: 17:04:22" itemprop="dateCreated datePublished" datetime="2019-03-24T14:01:46+08:00">2019-03-24</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/sql注入/" rel="tag"># sql注入</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h3 id="解析应用程序——BurpSuite爬取站点"><a href="#解析应用程序——BurpSuite爬取站点" class="headerlink" title="解析应用程序——BurpSuite爬取站点"></a>解析应用程序——BurpSuite爬取站点</h3><p>攻击应用程序的第一步是收集和分析与他有关的一些关键信息，从而清楚的了解攻击目标。</p>
-<p>解析过程首先要枚举应用程序的内容与功能，从而了解应用程序的实际功能与运行机制。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/24/解析应用程序—爬取站点/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/24/解析应用程序—爬取站点/" rel="next" title="解析应用程序——BurpSuite爬取站点">
+                <i class="fa fa-chevron-left"></i> 解析应用程序——BurpSuite爬取站点
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bookchi.github.io/2019/03/23/mssql注入/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fuubar">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fuubar2">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/23/mssql注入/" itemprop="url">
-                  mssql注入
-                </a>
-              
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-23 12:51:10" itemprop="dateCreated datePublished" datetime="2019-03-23T12:51:10+08:00">2019-03-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-03-24 17:17:41" itemprop="dateModified" datetime="2019-03-24T17:17:41+08:00">2019-03-24</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h4 id="sqlserver数据库介绍及操作"><a href="#sqlserver数据库介绍及操作" class="headerlink" title="sqlserver数据库介绍及操作"></a>sqlserver数据库介绍及操作</h4><p>默认端口1433；</p>
-<p>创建一个数据库，默认创建在路径中web.mdf;</p>
-<p>任务，分离，删除链接，然后把创建的文件在默认路径中删掉就可以了；</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/23/mssql注入/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -824,14 +533,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -852,8 +562,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -913,6 +632,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql介绍及操作"><span class="nav-number">1.</span> <span class="nav-text">mysql介绍及操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql注入原理"><span class="nav-number">2.</span> <span class="nav-text">mysql注入原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql注入其他操作"><span class="nav-number">3.</span> <span class="nav-text">mysql注入其他操作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1050,6 +785,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
 
   
 
