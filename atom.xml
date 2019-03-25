@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>fuubar2</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://bookchi.github.io/"/>
+  <updated>2019-03-24T09:29:07.032Z</updated>
+  <id>https://bookchi.github.io/</id>
+  
+  <author>
+    <name>fuubar</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql注入</title>
+    <link href="https://bookchi.github.io/2019/03/24/mysql%E6%B3%A8%E5%85%A5/"/>
+    <id>https://bookchi.github.io/2019/03/24/mysql注入/</id>
+    <published>2019-03-24T09:27:02.000Z</published>
+    <updated>2019-03-24T09:29:07.032Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;mysql介绍及操作&quot;&gt;&lt;a href=&quot;#mysql介绍及操作&quot; class=&quot;headerlink&quot; title=&quot;mysql介绍及操作&quot;&gt;&lt;/a&gt;mysql介绍及操作&lt;/h4&gt;&lt;p&gt;增删语句&lt;/p&gt;
+&lt;p&gt;information_schema是一个很重要的库，information_schema.tables&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解析应用程序——BurpSuite爬取站点</title>
+    <link href="https://bookchi.github.io/2019/03/24/%E8%A7%A3%E6%9E%90%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E2%80%94%E7%88%AC%E5%8F%96%E7%AB%99%E7%82%B9/"/>
+    <id>https://bookchi.github.io/2019/03/24/解析应用程序—爬取站点/</id>
+    <published>2019-03-24T06:01:46.000Z</published>
+    <updated>2019-03-24T09:04:22.092Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;解析应用程序——BurpSuite爬取站点&quot;&gt;&lt;a href=&quot;#解析应用程序——BurpSuite爬取站点&quot; class=&quot;headerlink&quot; title=&quot;解析应用程序——BurpSuite爬取站点&quot;&gt;&lt;/a&gt;解析应用程序——BurpSuite爬取站点&lt;/h3&gt;&lt;p&gt;攻击应用程序的第一步是收集和分析与他有关的一些关键信息，从而清楚的了解攻击目标。&lt;/p&gt;
+&lt;p&gt;解析过程首先要枚举应用程序的内容与功能，从而了解应用程序的实际功能与运行机制。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Web渗透" scheme="https://bookchi.github.io/tags/Web%E6%B8%97%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mssql注入</title>
+    <link href="https://bookchi.github.io/2019/03/23/mssql%E6%B3%A8%E5%85%A5/"/>
+    <id>https://bookchi.github.io/2019/03/23/mssql注入/</id>
+    <published>2019-03-23T04:51:10.000Z</published>
+    <updated>2019-03-24T09:17:41.558Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;sqlserver数据库介绍及操作&quot;&gt;&lt;a href=&quot;#sqlserver数据库介绍及操作&quot; class=&quot;headerlink&quot; title=&quot;sqlserver数据库介绍及操作&quot;&gt;&lt;/a&gt;sqlserver数据库介绍及操作&lt;/h4&gt;&lt;p&gt;默认端口1433；&lt;/p&gt;
+&lt;p&gt;创建一个数据库，默认创建在路径中web.mdf;&lt;/p&gt;
+&lt;p&gt;任务，分离，删除链接，然后把创建的文件在默认路径中删掉就可以了；&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
+  
+</feed>
