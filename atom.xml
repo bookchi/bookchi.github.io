@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-03-24T09:29:07.032Z</updated>
+  <updated>2019-03-25T13:31:11.029Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bufferoverflow原理</title>
+    <link href="https://bookchi.github.io/2019/03/25/bufferoverflow%E5%8E%9F%E7%90%86/"/>
+    <id>https://bookchi.github.io/2019/03/25/bufferoverflow原理/</id>
+    <published>2019-03-25T13:03:41.000Z</published>
+    <updated>2019-03-25T13:31:11.029Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;buffer-overflow原理及演示&quot;&gt;&lt;a href=&quot;#buffer-overflow原理及演示&quot; class=&quot;headerlink&quot; title=&quot;buffer overflow原理及演示&quot;&gt;&lt;/a&gt;buffer overflow原理及演示&lt;/h3&gt;&lt;h4 id=&quot;预备知识&quot;&gt;&lt;a href=&quot;#预备知识&quot; class=&quot;headerlink&quot; title=&quot;预备知识&quot;&gt;&lt;/a&gt;预备知识&lt;/h4&gt;&lt;p&gt;演示平台我用了ubuntu。在开始演示之前，首先需要了解一些知识。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="buffer overflow" scheme="https://bookchi.github.io/tags/buffer-overflow/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql注入</title>
