@@ -41,13 +41,15 @@
     <link href="https://bookchi.github.io/2019/03/25/bufferoverflow%E5%8E%9F%E7%90%86/"/>
     <id>https://bookchi.github.io/2019/03/25/bufferoverflow原理/</id>
     <published>2019-03-25T13:03:41.000Z</published>
-    <updated>2019-03-25T13:31:11.029Z</updated>
+    <updated>2019-03-26T15:13:42.703Z</updated>
     
     <summary type="html">
     
       &lt;h3 id=&quot;buffer-overflow原理及演示&quot;&gt;&lt;a href=&quot;#buffer-overflow原理及演示&quot; class=&quot;headerlink&quot; title=&quot;buffer overflow原理及演示&quot;&gt;&lt;/a&gt;buffer overflow原理及演示&lt;/h3&gt;&lt;h4 id=&quot;预备知识&quot;&gt;&lt;a href=&quot;#预备知识&quot; class=&quot;headerlink&quot; title=&quot;预备知识&quot;&gt;&lt;/a&gt;预备知识&lt;/h4&gt;&lt;p&gt;演示平台我用了ubuntu。在开始演示之前，首先需要了解一些知识。&lt;/p&gt;
     
     </summary>
+    
+      <category term="BufferOverflow" scheme="https://bookchi.github.io/categories/BufferOverflow/"/>
     
     
       <category term="buffer overflow" scheme="https://bookchi.github.io/tags/buffer-overflow/"/>
@@ -97,7 +99,7 @@
     <link href="https://bookchi.github.io/2019/03/23/mssql%E6%B3%A8%E5%85%A5/"/>
     <id>https://bookchi.github.io/2019/03/23/mssql注入/</id>
     <published>2019-03-23T04:51:10.000Z</published>
-    <updated>2019-03-24T09:17:41.558Z</updated>
+    <updated>2019-03-26T15:14:47.757Z</updated>
     
     <summary type="html">
     
@@ -106,6 +108,10 @@
 &lt;p&gt;任务，分离，删除链接，然后把创建的文件在默认路径中删掉就可以了；&lt;/p&gt;
     
     </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="SQL注入" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/SQL%E6%B3%A8%E5%85%A5/"/>
     
     
       <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
