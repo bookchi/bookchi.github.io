@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-03-25T13:31:11.029Z</updated>
+  <updated>2019-03-26T15:11:46.834Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web缓存欺骗攻击</title>
+    <link href="https://bookchi.github.io/2019/03/26/Web%E7%BC%93%E5%AD%98%E6%AC%BA%E9%AA%97%E6%94%BB%E5%87%BB/"/>
+    <id>https://bookchi.github.io/2019/03/26/Web缓存欺骗攻击/</id>
+    <published>2019-03-26T14:59:35.000Z</published>
+    <updated>2019-03-26T15:11:46.834Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Web缓存欺骗攻击&quot;&gt;&lt;a href=&quot;#Web缓存欺骗攻击&quot; class=&quot;headerlink&quot; title=&quot;Web缓存欺骗攻击&quot;&gt;&lt;/a&gt;Web缓存欺骗攻击&lt;/h3&gt;&lt;p&gt;Web缓存欺骗攻击是一种攻击方式，原理就是Web应用在使用缓存时没有正确验证，从而使攻击者实现了缓存泄露攻击。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="Web缓存欺骗" scheme="https://bookchi.github.io/tags/Web%E7%BC%93%E5%AD%98%E6%AC%BA%E9%AA%97/"/>
+    
+  </entry>
   
   <entry>
     <title>bufferoverflow原理</title>
