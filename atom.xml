@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-03-26T15:11:46.834Z</updated>
+  <updated>2019-03-26T15:16:28.928Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://bookchi.github.io/2019/03/26/Web%E7%BC%93%E5%AD%98%E6%AC%BA%E9%AA%97%E6%94%BB%E5%87%BB/"/>
     <id>https://bookchi.github.io/2019/03/26/Web缓存欺骗攻击/</id>
     <published>2019-03-26T14:59:35.000Z</published>
-    <updated>2019-03-26T15:11:46.834Z</updated>
+    <updated>2019-03-26T15:16:28.928Z</updated>
     
     <summary type="html">
     
@@ -41,7 +41,7 @@
     <link href="https://bookchi.github.io/2019/03/25/bufferoverflow%E5%8E%9F%E7%90%86/"/>
     <id>https://bookchi.github.io/2019/03/25/bufferoverflow原理/</id>
     <published>2019-03-25T13:03:41.000Z</published>
-    <updated>2019-03-26T15:13:42.703Z</updated>
+    <updated>2019-03-26T15:16:26.363Z</updated>
     
     <summary type="html">
     
@@ -61,7 +61,7 @@
     <link href="https://bookchi.github.io/2019/03/24/mysql%E6%B3%A8%E5%85%A5/"/>
     <id>https://bookchi.github.io/2019/03/24/mysql注入/</id>
     <published>2019-03-24T09:27:02.000Z</published>
-    <updated>2019-03-24T09:29:07.032Z</updated>
+    <updated>2019-03-26T15:19:28.395Z</updated>
     
     <summary type="html">
     
@@ -69,6 +69,10 @@
 &lt;p&gt;information_schema是一个很重要的库，information_schema.tables&lt;/p&gt;
     
     </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="SQL注入" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/SQL%E6%B3%A8%E5%85%A5/"/>
     
     
       <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
