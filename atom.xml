@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-03-29T09:13:18.301Z</updated>
+  <updated>2019-03-29T09:14:04.768Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://bookchi.github.io/2019/03/29/mysql%E6%98%BE%E9%94%99%E6%B3%A8%E5%85%A5/"/>
     <id>https://bookchi.github.io/2019/03/29/mysql显错注入/</id>
     <published>2019-03-29T08:37:30.000Z</published>
-    <updated>2019-03-29T09:13:18.301Z</updated>
+    <updated>2019-03-29T09:14:04.768Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;mysql显错注入&quot;&gt;&lt;a href=&quot;#mysql显错注入&quot; class=&quot;headerlink&quot; title=&quot;mysql显错注入&quot;&gt;&lt;/a&gt;mysql显错注入&lt;/h3&gt;&lt;p&gt;显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。&lt;/p&gt;
+      &lt;p&gt;显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。&lt;/p&gt;
     
     </summary>
     
@@ -43,12 +43,11 @@
     <link href="https://bookchi.github.io/2019/03/27/%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B%E6%B3%A8%E5%85%A5/"/>
     <id>https://bookchi.github.io/2019/03/27/其他类型注入/</id>
     <published>2019-03-27T15:01:09.000Z</published>
-    <updated>2019-03-27T15:04:19.019Z</updated>
+    <updated>2019-03-29T09:17:28.184Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;其他注入类型&quot;&gt;&lt;a href=&quot;#其他注入类型&quot; class=&quot;headerlink&quot; title=&quot;其他注入类型&quot;&gt;&lt;/a&gt;其他注入类型&lt;/h3&gt;&lt;h4 id=&quot;提交方式注入&quot;&gt;&lt;a href=&quot;#提交方式注入&quot; class=&quot;headerlink&quot; title=&quot;提交方式注入&quot;&gt;&lt;/a&gt;提交方式注入&lt;/h4&gt;&lt;p&gt;常见的提交方式：GET、POST、COOKIE、HEAD、PUT、OPTION；&lt;/p&gt;
-&lt;p&gt;之前的基本上都是GET注入，通过url进行传参；&lt;/p&gt;
+      &lt;p&gt;除了直接在url中找?id=之外，还有许多其他类型的sql注入。&lt;/p&gt;
     
     </summary>
     
@@ -86,11 +85,11 @@
     <link href="https://bookchi.github.io/2019/03/25/bufferoverflow%E5%8E%9F%E7%90%86/"/>
     <id>https://bookchi.github.io/2019/03/25/bufferoverflow原理/</id>
     <published>2019-03-25T13:03:41.000Z</published>
-    <updated>2019-03-26T15:16:26.363Z</updated>
+    <updated>2019-03-29T09:15:13.335Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;buffer-overflow原理及演示&quot;&gt;&lt;a href=&quot;#buffer-overflow原理及演示&quot; class=&quot;headerlink&quot; title=&quot;buffer overflow原理及演示&quot;&gt;&lt;/a&gt;buffer overflow原理及演示&lt;/h3&gt;&lt;h4 id=&quot;预备知识&quot;&gt;&lt;a href=&quot;#预备知识&quot; class=&quot;headerlink&quot; title=&quot;预备知识&quot;&gt;&lt;/a&gt;预备知识&lt;/h4&gt;&lt;p&gt;演示平台我用了ubuntu。在开始演示之前，首先需要了解一些知识。&lt;/p&gt;
+      &lt;p&gt;buffer overflow是一种很古老的攻击手段，但是它的危害并不因此而减小。&lt;/p&gt;
     
     </summary>
     
@@ -129,14 +128,18 @@
     <link href="https://bookchi.github.io/2019/03/24/%E8%A7%A3%E6%9E%90%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E2%80%94%E7%88%AC%E5%8F%96%E7%AB%99%E7%82%B9/"/>
     <id>https://bookchi.github.io/2019/03/24/解析应用程序—爬取站点/</id>
     <published>2019-03-24T06:01:46.000Z</published>
-    <updated>2019-03-24T09:04:22.092Z</updated>
+    <updated>2019-03-29T09:18:28.622Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;解析应用程序——BurpSuite爬取站点&quot;&gt;&lt;a href=&quot;#解析应用程序——BurpSuite爬取站点&quot; class=&quot;headerlink&quot; title=&quot;解析应用程序——BurpSuite爬取站点&quot;&gt;&lt;/a&gt;解析应用程序——BurpSuite爬取站点&lt;/h3&gt;&lt;p&gt;攻击应用程序的第一步是收集和分析与他有关的一些关键信息，从而清楚的了解攻击目标。&lt;/p&gt;
+      &lt;p&gt;攻击应用程序的第一步是收集和分析与他有关的一些关键信息，从而清楚的了解攻击目标。&lt;/p&gt;
 &lt;p&gt;解析过程首先要枚举应用程序的内容与功能，从而了解应用程序的实际功能与运行机制。&lt;/p&gt;
     
     </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="工具使用" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
     
       <category term="Web渗透" scheme="https://bookchi.github.io/tags/Web%E6%B8%97%E9%80%8F/"/>
@@ -148,13 +151,11 @@
     <link href="https://bookchi.github.io/2019/03/23/mssql%E6%B3%A8%E5%85%A5/"/>
     <id>https://bookchi.github.io/2019/03/23/mssql注入/</id>
     <published>2019-03-23T04:51:10.000Z</published>
-    <updated>2019-03-26T15:17:23.282Z</updated>
+    <updated>2019-03-29T09:16:20.370Z</updated>
     
     <summary type="html">
     
-      &lt;h4 id=&quot;sqlserver数据库介绍及操作&quot;&gt;&lt;a href=&quot;#sqlserver数据库介绍及操作&quot; class=&quot;headerlink&quot; title=&quot;sqlserver数据库介绍及操作&quot;&gt;&lt;/a&gt;sqlserver数据库介绍及操作&lt;/h4&gt;&lt;p&gt;默认端口1433；&lt;/p&gt;
-&lt;p&gt;创建一个数据库，默认创建在路径中web.mdf;&lt;/p&gt;
-&lt;p&gt;任务，分离，删除链接，然后把创建的文件在默认路径中删掉就可以了；&lt;/p&gt;
+      &lt;p&gt;mssql是微软公司开发的一款数据库，应用广泛，它的注入方法与mysql有所不同。&lt;/p&gt;
     
     </summary>
     

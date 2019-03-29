@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="buffer overflow原理及演示预备知识演示平台我用了ubuntu。在开始演示之前，首先需要了解一些知识。">
+  <meta name="description" content="buffer overflow是一种很古老的攻击手段，但是它的危害并不因此而减小。">
 <meta name="keywords" content="buffer overflow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bufferoverflow原理">
 <meta property="og:url" content="https://bookchi.github.io/2019/03/25/bufferoverflow原理/index.html">
 <meta property="og:site_name" content="fuubar2">
-<meta property="og:description" content="buffer overflow原理及演示预备知识演示平台我用了ubuntu。在开始演示之前，首先需要了解一些知识。">
+<meta property="og:description" content="buffer overflow是一种很古老的攻击手段，但是它的危害并不因此而减小。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-26T15:16:26.363Z">
+<meta property="og:updated_time" content="2019-03-29T09:15:13.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bufferoverflow原理">
-<meta name="twitter:description" content="buffer overflow原理及演示预备知识演示平台我用了ubuntu。在开始演示之前，首先需要了解一些知识。">
+<meta name="twitter:description" content="buffer overflow是一种很古老的攻击手段，但是它的危害并不因此而减小。">
 
 
 
@@ -359,7 +359,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-26 23:16:26" itemprop="dateModified" datetime="2019-03-26T23:16:26+08:00">2019-03-26</time>
+                <time title="Modified: 2019-03-29 17:15:13" itemprop="dateModified" datetime="2019-03-29T17:15:13+08:00">2019-03-29</time>
               
             
           </span>
@@ -410,8 +410,9 @@
       
 
       
-        <h3 id="buffer-overflow原理及演示"><a href="#buffer-overflow原理及演示" class="headerlink" title="buffer overflow原理及演示"></a>buffer overflow原理及演示</h3><h4 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h4><p>演示平台我用了ubuntu。在开始演示之前，首先需要了解一些知识。</p>
+        <p>buffer overflow是一种很古老的攻击手段，但是它的危害并不因此而减小。</p>
 <a id="more"></a>
+<h3 id="buffer-overflow原理及演示"><a href="#buffer-overflow原理及演示" class="headerlink" title="buffer overflow原理及演示"></a>buffer overflow原理及演示</h3><h4 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h4><p>演示平台我用了ubuntu。在开始演示之前，首先需要了解一些知识。</p>
 <h5 id="地址空间随机化"><a href="#地址空间随机化" class="headerlink" title="地址空间随机化"></a>地址空间随机化</h5><p>ubuntu和一些其他的Linux系统适用了地址空间随机化，就是使一个程序每次执行时，分配到的内存地址都是随机的，这样就是猜测确切的地址十分困难。我们可以通过如下命令关闭地址随机：</p>
 <p><code>sudo sysctl -w kernel.randomize_va_space=0</code></p>
 <h5 id="StackGuard保护机制"><a href="#StackGuard保护机制" class="headerlink" title="StackGuard保护机制"></a>StackGuard保护机制</h5><p>GCC编译器内置了StackGuard保护机制，以此来防御buffer overflow。在开启之中保护机制的前提下，我们写的buffer overflow程序不会有效的。要关闭StackGuard机制，可以使用如下命令：</p>
@@ -571,7 +572,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
