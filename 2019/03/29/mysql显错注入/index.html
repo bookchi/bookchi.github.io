@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="mysql显错注入基本原理显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。">
+  <meta name="description" content="mysql显错注入显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。">
 <meta name="keywords" content="sql注入">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql显错注入">
 <meta property="og:url" content="https://bookchi.github.io/2019/03/29/mysql显错注入/index.html">
 <meta property="og:site_name" content="fuubar2">
-<meta property="og:description" content="mysql显错注入基本原理显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。">
+<meta property="og:description" content="mysql显错注入显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-29T09:09:36.408Z">
+<meta property="og:updated_time" content="2019-03-29T09:13:18.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql显错注入">
-<meta name="twitter:description" content="mysql显错注入基本原理显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。">
+<meta name="twitter:description" content="mysql显错注入显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。">
 
 
 
@@ -342,7 +342,7 @@
                 
               
 
-              <time title="Created: 2019-03-29 16:37:30 / Modified: 17:09:36" itemprop="dateCreated datePublished" datetime="2019-03-29T16:37:30+08:00">2019-03-29</time>
+              <time title="Created: 2019-03-29 16:37:30 / Modified: 17:13:18" itemprop="dateCreated datePublished" datetime="2019-03-29T16:37:30+08:00">2019-03-29</time>
             
 
             
@@ -405,8 +405,9 @@
       
 
       
-        <h3 id="mysql显错注入"><a href="#mysql显错注入" class="headerlink" title="mysql显错注入"></a>mysql显错注入</h3><h4 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h4><p>显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。</p>
+        <h3 id="mysql显错注入"><a href="#mysql显错注入" class="headerlink" title="mysql显错注入"></a>mysql显错注入</h3><p>显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。</p>
 <a id="more"></a>
+<h4 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h4><p>显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。</p>
 <h4 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h4><p>显错注入有很多种类型，这里主要以extractvalue()和updatexml()为例。</p>
 <h5 id="extractvalue-xml-frag-xpath-expr"><a href="#extractvalue-xml-frag-xpath-expr" class="headerlink" title="extractvalue(xml_frag, xpath_expr)"></a>extractvalue(<em>xml_frag</em>, <em>xpath_expr)</em></h5><p>该函数主要用于xml的提取，第一个参数是xml文本，第二个参数是xpath路径。通过下面的例子基本可以理解其用法：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> extractvalue(<span class="string">'&lt;a&gt;&lt;b&gt;1&lt;/b&gt;&lt;/a&gt;'</span>, <span class="string">'/a/b'</span>);</span><br><span class="line"># 查询结果应该为1</span><br></pre></td></tr></table></figure>

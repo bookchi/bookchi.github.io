@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-03-29T09:09:36.408Z</updated>
+  <updated>2019-03-29T09:13:18.301Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://bookchi.github.io/2019/03/29/mysql%E6%98%BE%E9%94%99%E6%B3%A8%E5%85%A5/"/>
     <id>https://bookchi.github.io/2019/03/29/mysql显错注入/</id>
     <published>2019-03-29T08:37:30.000Z</published>
-    <updated>2019-03-29T09:09:36.408Z</updated>
+    <updated>2019-03-29T09:13:18.301Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;mysql显错注入&quot;&gt;&lt;a href=&quot;#mysql显错注入&quot; class=&quot;headerlink&quot; title=&quot;mysql显错注入&quot;&gt;&lt;/a&gt;mysql显错注入&lt;/h3&gt;&lt;h4 id=&quot;基本原理&quot;&gt;&lt;a href=&quot;#基本原理&quot; class=&quot;headerlink&quot; title=&quot;基本原理&quot;&gt;&lt;/a&gt;基本原理&lt;/h4&gt;&lt;p&gt;显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。&lt;/p&gt;
+      &lt;h3 id=&quot;mysql显错注入&quot;&gt;&lt;a href=&quot;#mysql显错注入&quot; class=&quot;headerlink&quot; title=&quot;mysql显错注入&quot;&gt;&lt;/a&gt;mysql显错注入&lt;/h3&gt;&lt;p&gt;显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。&lt;/p&gt;
     
     </summary>
     
