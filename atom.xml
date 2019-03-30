@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-03-29T09:14:04.768Z</updated>
+  <updated>2019-03-30T10:15:18.227Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sqlmap使用</title>
+    <link href="https://bookchi.github.io/2019/03/29/sqlmap%E4%BD%BF%E7%94%A8/"/>
+    <id>https://bookchi.github.io/2019/03/29/sqlmap使用/</id>
+    <published>2019-03-29T12:36:01.000Z</published>
+    <updated>2019-03-30T10:15:18.227Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;sqlmap是由Python编写的渗透测试工具，主要用来检测sql注入漏洞，是一款功能强大的sql漏洞检测利用工具。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="工具使用" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql显错注入</title>
@@ -43,7 +65,7 @@
     <link href="https://bookchi.github.io/2019/03/27/%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B%E6%B3%A8%E5%85%A5/"/>
     <id>https://bookchi.github.io/2019/03/27/其他类型注入/</id>
     <published>2019-03-27T15:01:09.000Z</published>
-    <updated>2019-03-29T09:17:28.184Z</updated>
+    <updated>2019-03-29T13:05:06.381Z</updated>
     
     <summary type="html">
     

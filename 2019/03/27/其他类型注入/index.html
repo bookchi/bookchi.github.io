@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="fuubar2">
 <meta property="og:description" content="除了直接在url中找?id=之外，还有许多其他类型的sql注入。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-29T09:17:28.184Z">
+<meta property="og:updated_time" content="2019-03-29T13:05:06.381Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="其他类型注入">
 <meta name="twitter:description" content="除了直接在url中找?id=之外，还有许多其他类型的sql注入。">
@@ -359,7 +359,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-29 17:17:28" itemprop="dateModified" datetime="2019-03-29T17:17:28+08:00">2019-03-29</time>
+                <time title="Modified: 2019-03-29 21:05:06" itemprop="dateModified" datetime="2019-03-29T21:05:06+08:00">2019-03-29</time>
               
             
           </span>
@@ -511,8 +511,31 @@
 <p>类似一个中转注入；用工具Havij速度会很快；</p>
 </li>
 <li><p>http头注入</p>
+<p>client-ip，x-forwarded-for：接收IP<code>client: 1.1.11.1&#39;</code></p>
+<p>referer、agent注入</p>
+<p>可能会把这些参数记录到数据库中；</p>
+<ul>
+<li><p>何时可能有注入</p>
+<p>比如留言板，要把数据插入到数据库，会加上你的IP</p>
 </li>
+<li><p>如何利用(exp构造)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> blue_comment(com_id,user_id.type,mood,<span class="keyword">content</span>,pub_date,ip,is_check) <span class="keyword">values</span>(<span class="string">''</span>,<span class="string">'1'</span>,<span class="string">'0'</span>,<span class="string">'1'</span>,<span class="string">'6'</span>,<span class="string">'test'</span>,<span class="string">'1280888752'</span>,<span class="string">'111'</span> <span class="string">','</span><span class="number">1</span><span class="string">')</span></span><br></pre></td></tr></table></figure>
+<p>…………………………………………………………………</p>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>就只有上面这三个地方可能存在注入吗？其他头里面会有吗？</p>
+<p>bluecms http头注入</p>
+</blockquote>
+<ol start="7">
 <li><p>xml实体注入</p>
+<p>用于数据转存和传输；不是数据库；</p>
+<blockquote>
+<p>在哪里注？怎么注？</p>
+<p>哪里会有xml转存？</p>
+</blockquote>
 </li>
 </ol>
 
@@ -537,7 +560,7 @@
   <p><span>本文标题:</span><a href="/2019/03/27/其他类型注入/">其他类型注入</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 fuubar 的个人博客">fuubar</a></p>
   <p><span>发布时间:</span>2019年03月27日 - 23:03</p>
-  <p><span>最后更新:</span>2019年03月29日 - 17:03</p>
+  <p><span>最后更新:</span>2019年03月29日 - 21:03</p>
   <p><span>原始链接:</span><a href="/2019/03/27/其他类型注入/" title="其他类型注入">https://bookchi.github.io/2019/03/27/其他类型注入/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/03/27/其他类型注入/"  aria-label="复制成功！"></i></span>
   </p>
@@ -665,7 +688,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
