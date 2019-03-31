@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-03-31T14:51:23.648Z</updated>
+  <updated>2019-03-31T14:53:05.559Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://bookchi.github.io/2019/03/31/%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
     <id>https://bookchi.github.io/2019/03/31/基本信息收集/</id>
     <published>2019-03-31T14:50:28.000Z</published>
-    <updated>2019-03-31T14:51:23.648Z</updated>
+    <updated>2019-03-31T14:53:05.559Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,8 @@
       
         
         
-          &lt;h3 id=&quot;信息收集&quot;&gt;&lt;a href=&quot;#信息收集&quot; class=&quot;headerlink&quot; title=&quot;信息收集&quot;&gt;&lt;/a&gt;信息收集&lt;/h3&gt;&lt;h4 id=&quot;基本信息收集&quot;&gt;&lt;a href=&quot;#基本信息收集&quot; class=&quot;headerlink&quot;
+          &lt;h3 id=&quot;信息收集&quot;&gt;&lt;a href=&quot;#信息收集&quot; class=&quot;headerlink&quot; title=&quot;信息收集&quot;&gt;&lt;/a&gt;信息收集&lt;/h3&gt;&lt;p&gt;信息收集是渗透测试最初的一步，也是很重要的一步，会影响到后续的渗透过程。&lt;/p&gt;
+&lt;h4 id=&quot;基本信息收集&quot;&gt;&lt;a
         
       
     
