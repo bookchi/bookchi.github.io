@@ -342,7 +342,7 @@
                 
               
 
-              <time title="Created: 2019-03-31 22:50:28 / Modified: 22:53:05" itemprop="dateCreated datePublished" datetime="2019-03-31T22:50:28+08:00">2019-03-31</time>
+              <time title="Created: 2019-03-31 22:50:28 / Modified: 22:54:31" itemprop="dateCreated datePublished" datetime="2019-03-31T22:50:28+08:00">2019-03-31</time>
             
 
             
@@ -406,77 +406,14 @@
 
       
         
-          
-            <h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p>信息收集是渗透测试最初的一步，也是很重要的一步，会影响到后续的渗透过程。</p>
-<h4 id="基本信息收集"><a href="#基本信息收集" class="headerlink" title="基本信息收集"></a>基本信息收集</h4><blockquote>
-<p>域名信息；敏感目录；端口扫描；旁站C段</p>
-<p>整站分析；google hacker；url采集；信息分析；</p>
-</blockquote>
-<h5 id="域名信息"><a href="#域名信息" class="headerlink" title="域名信息"></a>域名信息</h5><p>对应ip收集：nslookup、站长工具</p>
-<p>子域名收集：layer、subDomainBrute；主站没有漏洞，子站或许比较薄弱；</p>
-<p>whois信息查询：查询注册人的一些相关信息</p>
-<h5 id="敏感目录"><a href="#敏感目录" class="headerlink" title="敏感目录"></a>敏感目录</h5><ul>
-<li><p>收集方向</p>
-<p>robots.txt、后台目录、==安装包==、上传目录、mysql管理接口(比如phpMyAdmin)、安装页面、phpinfo、编辑器、iis短文件</p>
-</li>
-<li><p>常用工具</p>
-<p>字典爆破：御剑、dirbuster、wwwscan、IIS_shortname_Scanner</p>
-<p>蜘蛛爬行：爬行菜刀、webrobot、bp</p>
-</li>
-</ul>
-<h5 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">21——&gt;FTP	2121</span><br><span class="line">22——&gt;SSH</span><br><span class="line">23——&gt;Telnet</span><br><span class="line">110——&gt;POP3</span><br><span class="line">1433——&gt;sqlserer</span><br><span class="line">...</span><br><span class="line">3389——&gt;远程服务</span><br><span class="line">8080——&gt;Tomcat/jboss</span><br><span class="line">3389——&gt;WebSphere</span><br></pre></td></tr></table></figure>
-<p>常用工具：nmap、scanport、ntscan(内网渗透用的较多)</p>
-<h5 id="旁站C段"><a href="#旁站C段" class="headerlink" title="旁站C段"></a>旁站C段</h5><p>旁站：同一个服务器的其他站点</p>
-<p>C段：同一网段其他服务器；可能它们连在一个网关上，然后可以进行内网渗透(mac需动态获取)；</p>
-<p>常用工具：web&gt;&gt;御剑1.5</p>
-<p>​            端口&gt;&gt;portscan</p>
-<h5 id="整站分析"><a href="#整站分析" class="headerlink" title="整站分析"></a>整站分析</h5><ul>
-<li><p>服务器类型</p>
-<p>服务器平台(主要在提权时用到)、版本</p>
-<p>nmap -O可以识别服务器版本；</p>
-</li>
-<li><p>网站容器</p>
-<p>常见的有：iis、Apache、Nginx、tomcat、lighthttpd等；</p>
-</li>
-<li><p>脚本类型</p>
-<p>asp、jsp、php、aspx</p>
-</li>
-<li><p>数据库类型</p>
-<p>access、sqlserver、mysql、oracle、postgresql</p>
-</li>
-<li><p>CMS类型(很重要)</p>
-</li>
-<li><p>WAF</p>
-<p>常见的：安全狗、蓝盾之类的</p>
-</li>
-</ul>
-<h5 id="google-hacker"><a href="#google-hacker" class="headerlink" title="google hacker"></a>google hacker</h5><p>intext, intitle, filetype, inurl, site etc;</p>
-<h5 id="url采集"><a href="#url采集" class="headerlink" title="url采集"></a>url采集</h5><p>url采集工具，使用google hacker语法，然后可以把采集到的url导入到御剑，批量检测注入；椰树也可以；</p>
-<h4 id="网站后台查找"><a href="#网站后台查找" class="headerlink" title="网站后台查找"></a>网站后台查找</h4><p>查找网站的后台；</p>
-<blockquote>
-<ol>
-<li>弱口令默认后台：admin，admin/login.asp， manage，login.asp，webmaster</li>
-<li>查看网页链接</li>
-<li>查看网站图片属性           # 不太好用</li>
-<li>查看看网站用的管理系统，从而确定后台</li>
-<li>使用工具查找：御剑，bp什么收集目录</li>
-<li>robots.txt的帮助：有时候后台会写在robots文件中</li>
-<li>google hacker</li>
-<li>查看网站使用的编辑器是会否有默认后台</li>
-<li>短文件利用</li>
-<li>sqlmap –sql-shell load_file(‘d:/wwwroot/index.php’)</li>
-</ol>
-</blockquote>
-<h4 id="CDN绕过方法"><a href="#CDN绕过方法" class="headerlink" title="CDN绕过方法"></a>CDN绕过方法</h4><h5 id="什么是CDN？"><a href="#什么是CDN？" class="headerlink" title="什么是CDN？"></a>什么是CDN？</h5><p>是内容分发网络，类似火车票的代售点，是主服务器的替身服务器，替主服务器分担压力；</p>
-<p>攻击的话，可能会攻击到CND服务区七，而非真身；</p>
-<h5 id="如何判断有没有CDN"><a href="#如何判断有没有CDN" class="headerlink" title="如何判断有没有CDN"></a>如何判断有没有CDN</h5><p>可以使用站长工具进行超级ping；如果各个地方解析的都是一个IP，那么显然是没有CDN；</p>
-<h5 id="查询真实ip"><a href="#查询真实ip" class="headerlink" title="查询真实ip"></a>查询真实ip</h5><p>查找二级域名：主站一般会有CDN，但是子站不一定；所以去查找子域名(可能在一个服务器上)，通过它来进行攻击；</p>
-<p>让服务器主动给你发包：一般是通过主服务器和你交互；可以通过邮件发包，注册；</p>
-<p>敏感文件泄露：比如phpinfo，会泄露真实服务器的ip；</p>
-<p>查询历史解析ip：比如用ip138，查询某个域名的ip，会查到很多ip，比较早的可能就是真实ip；</p>
-<h5 id="穿过CDN"><a href="#穿过CDN" class="headerlink" title="穿过CDN"></a>穿过CDN</h5><p>修改host文件，把域名对应的ip修改掉即可；(host文件也可以被欺骗)</p>
-
-          
+          <h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><p>信息收集是渗透测试最初的一步，也是很重要的一步，会影响到后续的渗透过程。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/31/基本信息收集/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
