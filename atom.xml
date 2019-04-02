@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-03-31T14:54:31.934Z</updated>
+  <updated>2019-04-02T13:45:09.182Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>上传漏洞</title>
+    <link href="https://bookchi.github.io/2019/04/02/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"/>
+    <id>https://bookchi.github.io/2019/04/02/上传漏洞/</id>
+    <published>2019-04-02T13:43:46.000Z</published>
+    <updated>2019-04-02T13:45:09.182Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;上传漏洞&quot;&gt;&lt;a href=&quot;#上传漏洞&quot; class=&quot;headerlink&quot; title=&quot;上传漏洞&quot;&gt;&lt;/a&gt;上传漏洞&lt;/h2&gt;&lt;h3 id=&quot;文件解析漏洞&quot;&gt;&lt;a href=&quot;#文件解析漏洞&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="上传漏洞" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"/>
+    
+    
+      <category term="上传漏洞" scheme="https://bookchi.github.io/tags/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"/>
+    
+  </entry>
   
   <entry>
     <title>基本信息收集</title>
@@ -65,7 +93,7 @@
     <link href="https://bookchi.github.io/2019/03/29/sqlmap%E4%BD%BF%E7%94%A8/"/>
     <id>https://bookchi.github.io/2019/03/29/sqlmap使用/</id>
     <published>2019-03-29T12:36:01.000Z</published>
-    <updated>2019-03-30T10:15:18.227Z</updated>
+    <updated>2019-04-02T13:45:42.656Z</updated>
     
     <summary type="html">
     
@@ -78,7 +106,7 @@
       <category term="工具使用" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
     
-      <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
+      <category term="工具使用" scheme="https://bookchi.github.io/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
   </entry>
   
@@ -194,7 +222,7 @@
     <link href="https://bookchi.github.io/2019/03/24/%E8%A7%A3%E6%9E%90%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E2%80%94%E7%88%AC%E5%8F%96%E7%AB%99%E7%82%B9/"/>
     <id>https://bookchi.github.io/2019/03/24/解析应用程序—爬取站点/</id>
     <published>2019-03-24T06:01:46.000Z</published>
-    <updated>2019-03-29T09:18:28.622Z</updated>
+    <updated>2019-04-02T13:45:26.839Z</updated>
     
     <summary type="html">
     
@@ -208,7 +236,7 @@
       <category term="工具使用" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
     
-      <category term="Web渗透" scheme="https://bookchi.github.io/tags/Web%E6%B8%97%E9%80%8F/"/>
+      <category term="工具使用" scheme="https://bookchi.github.io/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
   </entry>
   
