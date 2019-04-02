@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-04-02T13:45:09.182Z</updated>
+  <updated>2019-04-02T13:47:00.133Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -21,17 +21,12 @@
     <link href="https://bookchi.github.io/2019/04/02/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/"/>
     <id>https://bookchi.github.io/2019/04/02/上传漏洞/</id>
     <published>2019-04-02T13:43:46.000Z</published>
-    <updated>2019-04-02T13:45:09.182Z</updated>
+    <updated>2019-04-02T13:47:00.133Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;上传漏洞&quot;&gt;&lt;a href=&quot;#上传漏洞&quot; class=&quot;headerlink&quot; title=&quot;上传漏洞&quot;&gt;&lt;/a&gt;上传漏洞&lt;/h2&gt;&lt;h3 id=&quot;文件解析漏洞&quot;&gt;&lt;a href=&quot;#文件解析漏洞&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;p&gt;是指一些特殊文件被容器在某些情况下解释成脚本文件格式的漏洞；&lt;/p&gt;
+&lt;p&gt;比如上传一张图片或者txt文件，但是容器把它当成了脚本；&lt;/p&gt;
     
     </summary>
     

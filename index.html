@@ -342,7 +342,7 @@
                 
               
 
-              <time title="Created: 2019-04-02 21:43:46 / Modified: 21:45:09" itemprop="dateCreated datePublished" datetime="2019-04-02T21:43:46+08:00">2019-04-02</time>
+              <time title="Created: 2019-04-02 21:43:46 / Modified: 21:47:00" itemprop="dateCreated datePublished" datetime="2019-04-02T21:43:46+08:00">2019-04-02</time>
             
 
             
@@ -406,78 +406,15 @@
 
       
         
-          
-            <h2 id="上传漏洞"><a href="#上传漏洞" class="headerlink" title="上传漏洞"></a>上传漏洞</h2><h3 id="文件解析漏洞"><a href="#文件解析漏洞" class="headerlink" title="文件解析漏洞"></a>文件解析漏洞</h3><p>是指一些特殊文件被容器在某些情况下解释成脚本文件格式的漏洞；</p>
+          <p>是指一些特殊文件被容器在某些情况下解释成脚本文件格式的漏洞；</p>
 <p>比如上传一张图片或者txt文件，但是容器把它当成了脚本；</p>
-<h4 id="IIS-5-x-6-0解析漏洞-03"><a href="#IIS-5-x-6-0解析漏洞-03" class="headerlink" title="IIS 5.x/6.0解析漏洞 -03"></a>IIS 5.x/6.0解析漏洞 -03</h4><p>把非脚本格式的文件当做脚本运行；</p>
-<ul>
-<li><p>目录解析</p>
-<p><code>/xx.asp/xx.jpg</code>：在.asp目录下所有的文件都是asp文件；即便是目录，也把xx.asp当做文件；</p>
-</li>
-<li><p>文件解析</p>
-<p><code>xx.asp;.jpg</code>：看起来是图片，但是服务器端会读到xx.asp，到;就不再往后读，从而被解析为脚本；</p>
-<p><code>/xx.asa    /xx.cer    /xx.cdx</code>：他们也可能被当做脚本解析</p>
-</li>
-</ul>
-<h4 id="IIS-7-0-IIS-7-5-Nginx-lt-8-03畸形解析漏洞"><a href="#IIS-7-0-IIS-7-5-Nginx-lt-8-03畸形解析漏洞" class="headerlink" title="IIS 7.0/IIS 7.5/Nginx &lt;8.03畸形解析漏洞"></a>IIS 7.0/IIS 7.5/Nginx &lt;8.03畸形解析漏洞</h4><p>在默认Fast-CGI开启时，上传一个xx.jpg，内容为含有php的webshell，</p>
-<p>访问<code>xx.jpg/x.php</code>，这张图片就以php格式运行；</p>
-<ul>
-<li><p>空字节截断</p>
-<p><code>x.php%00.jpg</code>：读到%00就不往下读了</p>
-<p><code>a.aspx.a;a.aspx.jpg..jpg</code>：第二种解析漏洞</p>
-</li>
-</ul>
-<h4 id="Apache解析漏洞"><a href="#Apache解析漏洞" class="headerlink" title="Apache解析漏洞"></a>Apache解析漏洞</h4><p>Apache是从右往左开始判断解析，如果不可识别解析，就接着往左判断；</p>
-<p>比如<code>xx.php.zzz</code>：Apache会解析为xx.php；  或者<code>xx.php_</code></p>
-<h4 id="htaccess文件解析"><a href="#htaccess文件解析" class="headerlink" title="htaccess文件解析"></a>htaccess文件解析</h4><p>一般用它来留后门；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 如果Apache中.htacess可被执行，且可被上传，尝试写入</span><br><span class="line">&lt;FilesMatch &quot;shell.jpg&quot;&gt;SetHandler application/x-httpd-php&lt;/FilesMatch&gt;</span><br><span class="line"># 上传shell.jpg，就会把shell.jpg当做php脚本执行</span><br></pre></td></tr></table></figure>
-<h3 id="上传本地验证绕过"><a href="#上传本地验证绕过" class="headerlink" title="上传本地验证绕过"></a>上传本地验证绕过</h3><h4 id="上传检测"><a href="#上传检测" class="headerlink" title="上传检测"></a>上传检测</h4><p>服务器会禁止上传一些非法文件，要检测是否是非法文件，通过本地的js代码or服务器端检测；</p>
-<blockquote>
-<p>服务器命名规则</p>
-<p>​    -上传文件名和服务器命名一致：上传的temp.jpg，服务器端也叫temp.jpg</p>
-<p>​    - 两者不一致：随机、时间日期命名等</p>
-</blockquote>
-<h4 id="常见的上传检测方式"><a href="#常见的上传检测方式" class="headerlink" title="常见的上传检测方式"></a>常见的上传检测方式</h4><ol>
-<li>客户端js检测（通常检测扩展名）</li>
-<li>服务器端MIME检测（检测Content-type内容）</li>
-<li>服务器目录路径检测（检测与path相关内容）</li>
-<li>服务器文件扩展名检测（检测与文件extension相关内容）</li>
-<li>服务器文件内容检测（检测内容是否合法or含有恶意代码）</li>
-</ol>
-<h4 id="客户端js检测"><a href="#客户端js检测" class="headerlink" title="客户端js检测"></a>客户端js检测</h4><p>怎么知道是本地的检测？点击上传之后立刻就出来弹框，响应会这么快一般就是本地；or查看前端代码；</p>
-<h5 id="绕过方法"><a href="#绕过方法" class="headerlink" title="绕过方法"></a>绕过方法</h5><p>本地检测一般很好绕过，主要方法有：改js代码；直接把调用的js函数去掉；使用bp抓包后修改文件后缀名；</p>
-<blockquote>
-<p>那么什么站存在这种漏洞呢？——因酷教育，不过已经补上了.</p>
-</blockquote>
-<h3 id="上传服务器端验证绕过"><a href="#上传服务器端验证绕过" class="headerlink" title="上传服务器端验证绕过"></a>上传服务器端验证绕过</h3><h4 id="MIME检测"><a href="#MIME检测" class="headerlink" title="MIME检测"></a>MIME检测</h4><p>查看http头里的Content-Type，是否符合要求</p>
-<p>绕过方法：使用bp抓包，修改Content-Type的内容即可；</p>
-<h4 id="目录路径检测"><a href="#目录路径检测" class="headerlink" title="目录路径检测"></a>目录路径检测</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 服务器端将上传的文件都命名为$date.jpg</span><br><span class="line">Http包中: upfile/</span><br><span class="line">可以将之修改为：upfile/x.asp/</span><br><span class="line"># 这样上传的文件都为upfile/x.asp/$date.jpg</span><br><span class="line"># 如果是IIS 6.0，就可以当脚本执行了</span><br><span class="line"></span><br><span class="line">upfile/x.asp;</span><br><span class="line"># ;后面不去读取</span><br><span class="line"></span><br><span class="line">显示JFIF，后面是乱码；一般说明代码已经解析成功；</span><br></pre></td></tr></table></figure>
-<h4 id="文件扩展名检测"><a href="#文件扩展名检测" class="headerlink" title="文件扩展名检测"></a>文件扩展名检测</h4><h5 id="黑名单检测绕过"><a href="#黑名单检测绕过" class="headerlink" title="黑名单检测绕过"></a>黑名单检测绕过</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 大小写绕过</span><br><span class="line">aSp,PHp</span><br><span class="line"></span><br><span class="line"># 名单列表绕过</span><br><span class="line">asp. asp cer asa php asp PHP. PHP.pPP</span><br><span class="line">把这些能想到的放在一个列表文件中，去爆破（万一黑名单就忘了定义某一个呢）</span><br><span class="line"></span><br><span class="line"># 特殊文件名绕过</span><br><span class="line">加_, space，.之类的；</span><br><span class="line"></span><br><span class="line"># 00截断</span><br><span class="line">a.php%00.jpg</span><br><span class="line"></span><br><span class="line"># .htaccess</span><br></pre></td></tr></table></figure>
-<h5 id="白名单检测"><a href="#白名单检测" class="headerlink" title="白名单检测"></a>白名单检测</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># %00截断绕过</span><br><span class="line"></span><br><span class="line"># .htaccess文件攻击</span><br></pre></td></tr></table></figure>
-<h5 id="双文件上传"><a href="#双文件上传" class="headerlink" title="双文件上传"></a>双文件上传</h5><p>使用bp，把第一个文件复制下来；检测了第一个，但没有检测第二个</p>
-<blockquote>
-<p>南方、良精、动易….</p>
-</blockquote>
-<h4 id="文件内容检测"><a href="#文件内容检测" class="headerlink" title="文件内容检测"></a>文件内容检测</h4><h5 id="绕过检测文件头"><a href="#绕过检测文件头" class="headerlink" title="绕过检测文件头"></a>绕过检测文件头</h5><p>主要是检测文件内容开始处的文件幻数</p>
-<blockquote>
-<p>比如jpg文件: FF D8 FF E0 00 10 4A 46 49 46——&gt;…..JFIF</p>
-<p>gif文件 GIF89a</p>
-<p>单纯的改为xxx.gif并不能把文件幻数也修改掉</p>
-<p>改为gif89a就可以</p>
-</blockquote>
-<h5 id="文件加载检测"><a href="#文件加载检测" class="headerlink" title="文件加载检测"></a>文件加载检测</h5><p>如果上传的文件头是图片的头，但是内容不是文件，就上传不了；</p>
-<blockquote>
-<p> 所以需要制作图片码</p>
-<p>主要检测的是：文件头，文件大小，文件内容</p>
-</blockquote>
-<h5 id="二次渲染"><a href="#二次渲染" class="headerlink" title="二次渲染"></a>二次渲染</h5><p>发现恶意图片上传完之后，菜刀连接不上；这是因为有二次渲染，木马被过掉了；</p>
-<p>绕过的方法</p>
-<blockquote>
-<p>攻击图片操作函数本身</p>
-<p>​    -魔术图片漏洞：magic image</p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/02/上传漏洞/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
