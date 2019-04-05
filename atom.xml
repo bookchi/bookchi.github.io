@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-04-02T13:47:00.133Z</updated>
+  <updated>2019-04-05T11:07:31.359Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>编辑器漏洞概述</title>
+    <link href="https://bookchi.github.io/2019/04/05/%E7%BC%96%E8%BE%91%E5%99%A8%E6%BC%8F%E6%B4%9E%E6%A6%82%E8%BF%B0/"/>
+    <id>https://bookchi.github.io/2019/04/05/编辑器漏洞概述/</id>
+    <published>2019-04-05T11:05:49.000Z</published>
+    <updated>2019-04-05T11:07:31.359Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一般的网站都是动态网站，和静态最大的区别的就是和数据库的交互。动态网页可能会有添加文章，修改内容的功能，实现这些功能都需要用到编辑器，编辑器对网站的修改有很大的作用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="编辑器漏洞" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/%E7%BC%96%E8%BE%91%E5%99%A8%E6%BC%8F%E6%B4%9E/"/>
+    
+    
+      <category term="编辑器漏洞" scheme="https://bookchi.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8%E6%BC%8F%E6%B4%9E/"/>
+    
+  </entry>
   
   <entry>
     <title>上传漏洞</title>
