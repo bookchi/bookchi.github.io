@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="fuubar2">
 <meta property="og:description" content="一般的网站都是动态网站，和静态最大的区别的就是和数据库的交互。动态网页可能会有添加文章，修改内容的功能，实现这些功能都需要用到编辑器，编辑器对网站的修改有很大的作用。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-05T11:07:31.359Z">
+<meta property="og:updated_time" content="2019-04-05T11:12:02.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编辑器漏洞概述">
 <meta name="twitter:description" content="一般的网站都是动态网站，和静态最大的区别的就是和数据库的交互。动态网页可能会有添加文章，修改内容的功能，实现这些功能都需要用到编辑器，编辑器对网站的修改有很大的作用。">
@@ -342,7 +342,7 @@
                 
               
 
-              <time title="Created: 2019-04-05 19:05:49 / Modified: 19:07:31" itemprop="dateCreated datePublished" datetime="2019-04-05T19:05:49+08:00">2019-04-05</time>
+              <time title="Created: 2019-04-05 19:05:49 / Modified: 19:12:02" itemprop="dateCreated datePublished" datetime="2019-04-05T19:05:49+08:00">2019-04-05</time>
             
 
             
@@ -442,6 +442,10 @@
 <h5 id="UEditor"><a href="#UEditor" class="headerlink" title="UEditor"></a>UEditor</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">利用IIS6.0文件名解析漏洞</span><br><span class="line">x.php;20190405.jpg获取shell</span><br></pre></td></tr></table></figure>
 <h5 id="DotNetTextBox"><a href="#DotNetTextBox" class="headerlink" title="DotNetTextBox"></a>DotNetTextBox</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">关键字：system_dntb/</span><br><span class="line">确定有 system_dntb/uploadimg.aspx 并能打开，这时候是不能上传的，由于他是验证cookie来得出上传后的路径，这样我们可以用cookie欺骗工具。</span><br><span class="line">cookie:UserType=0; IsEdition=0; Info=1; uploadFolder=../system_dntb/Upload/;</span><br><span class="line">路径可以修改，只是权限够，上传后改名为1.asp;.jpg利用iis解析漏洞</span><br></pre></td></tr></table></figure>
 <h5 id="phpweb后台Kedit"><a href="#phpweb后台Kedit" class="headerlink" title="phpweb后台Kedit"></a>phpweb后台Kedit</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">两种利用方式</span><br><span class="line">1. 利用IIS6.0文件名解析漏洞  xx.php;.jpg</span><br><span class="line">2. %00截断    xx.php%00.jpg</span><br></pre></td></tr></table></figure>
+<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><p><a href="https://www.jb51.net/hack/35416.html" target="_blank" rel="noopener">ewebeditor编辑器一些技巧</a></p>
+<p><a href="https://www.0dayhack.com/post-426.html" target="_blank" rel="noopener">ewebeditor编辑器漏洞总结</a></p>
+<p><a href="https://www.jb51.net/article/26841.htm" target="_blank" rel="noopener">常用网页编辑器漏洞</a></p>
+<p><a href="https://www.jianshu.com/p/b0295978da77" target="_blank" rel="noopener">Fckeditor漏洞整理集合</a></p>
 
       
     </div>
@@ -689,7 +693,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑器漏洞概述"><span class="nav-number">1.</span> <span class="nav-text">编辑器漏洞概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FCKeditor编辑器利用"><span class="nav-number">1.1.</span> <span class="nav-text">FCKeditor编辑器利用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#如何找编辑器"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何找编辑器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何利用"><span class="nav-number">1.1.2.</span> <span class="nav-text">如何利用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EWEBeditor编辑器利用"><span class="nav-number">1.2.</span> <span class="nav-text">EWEBeditor编辑器利用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他类型编辑器利用"><span class="nav-number">1.3.</span> <span class="nav-text">其他类型编辑器利用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CKFinder-任意文件上传漏洞"><span class="nav-number">1.3.1.</span> <span class="nav-text">CKFinder 任意文件上传漏洞</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#南方数据-southidceditor"><span class="nav-number">1.3.2.</span> <span class="nav-text">南方数据 southidceditor</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UEditor"><span class="nav-number">1.3.3.</span> <span class="nav-text">UEditor</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DotNetTextBox"><span class="nav-number">1.3.4.</span> <span class="nav-text">DotNetTextBox</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#phpweb后台Kedit"><span class="nav-number">1.3.5.</span> <span class="nav-text">phpweb后台Kedit</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑器漏洞概述"><span class="nav-number">1.</span> <span class="nav-text">编辑器漏洞概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FCKeditor编辑器利用"><span class="nav-number">1.1.</span> <span class="nav-text">FCKeditor编辑器利用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#如何找编辑器"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何找编辑器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何利用"><span class="nav-number">1.1.2.</span> <span class="nav-text">如何利用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EWEBeditor编辑器利用"><span class="nav-number">1.2.</span> <span class="nav-text">EWEBeditor编辑器利用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他类型编辑器利用"><span class="nav-number">1.3.</span> <span class="nav-text">其他类型编辑器利用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CKFinder-任意文件上传漏洞"><span class="nav-number">1.3.1.</span> <span class="nav-text">CKFinder 任意文件上传漏洞</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#南方数据-southidceditor"><span class="nav-number">1.3.2.</span> <span class="nav-text">南方数据 southidceditor</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UEditor"><span class="nav-number">1.3.3.</span> <span class="nav-text">UEditor</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DotNetTextBox"><span class="nav-number">1.3.4.</span> <span class="nav-text">DotNetTextBox</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#phpweb后台Kedit"><span class="nav-number">1.3.5.</span> <span class="nav-text">phpweb后台Kedit</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考链接"><span class="nav-number">1.4.</span> <span class="nav-text">参考链接</span></a></li></ol></li></ol></div>
             
 
           </div>
