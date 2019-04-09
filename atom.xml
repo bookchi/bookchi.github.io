@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-04-05T11:12:02.489Z</updated>
+  <updated>2019-04-09T14:32:12.293Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSRF攻击</title>
+    <link href="https://bookchi.github.io/2019/04/09/CSRF%E6%94%BB%E5%87%BB/"/>
+    <id>https://bookchi.github.io/2019/04/09/CSRF攻击/</id>
+    <published>2019-04-09T14:31:09.000Z</published>
+    <updated>2019-04-09T14:32:12.293Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;CSRF&quot;&gt;&lt;a href=&quot;#CSRF&quot; class=&quot;headerlink&quot; title=&quot;CSRF&quot;&gt;&lt;/a&gt;CSRF&lt;/h1&gt;&lt;p&gt;CSRF是通过构造恶意链接，让用户点击，然后这个url向服务器端发送请求，比如删除某篇博客，但是用户不知道自己发送了这样的请求。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="CSRF" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/CSRF/"/>
+    
+    
+      <category term="csrf" scheme="https://bookchi.github.io/tags/csrf/"/>
+    
+  </entry>
   
   <entry>
     <title>编辑器漏洞概述</title>
