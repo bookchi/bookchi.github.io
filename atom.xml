@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-04-10T10:52:47.747Z</updated>
+  <updated>2019-04-13T01:10:38.204Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JSP相关漏洞概述</title>
+    <link href="https://bookchi.github.io/2019/04/13/JSP%E7%9B%B8%E5%85%B3%E6%BC%8F%E6%B4%9E%E6%A6%82%E8%BF%B0/"/>
+    <id>https://bookchi.github.io/2019/04/13/JSP相关漏洞概述/</id>
+    <published>2019-04-13T01:08:22.000Z</published>
+    <updated>2019-04-13T01:10:38.204Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;JSP相关漏洞&quot;&gt;&lt;a href=&quot;#JSP相关漏洞&quot; class=&quot;headerlink&quot; title=&quot;JSP相关漏洞&quot;&gt;&lt;/a&gt;JSP相关漏洞&lt;/h2&gt;&lt;h3 id=&quot;ST2漏洞&quot;&gt;&lt;a href=&quot;#ST2漏洞&quot; class=&quot;headerlink&quot; title=&quot;ST2漏洞&quot;&gt;&lt;/a&gt;ST2漏洞&lt;/h3&gt;&lt;p&gt;Structs2是java的一个框架；怎么找其漏洞？找到了怎么利用？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="其他漏洞" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/%E5%85%B6%E4%BB%96%E6%BC%8F%E6%B4%9E/"/>
+    
+    
+      <category term="其他漏洞" scheme="https://bookchi.github.io/tags/%E5%85%B6%E4%BB%96%E6%BC%8F%E6%B4%9E/"/>
+    
+  </entry>
+  
+  <entry>
     <title>其他漏洞</title>
     <link href="https://bookchi.github.io/2019/04/10/%E5%85%B6%E4%BB%96%E6%BC%8F%E6%B4%9E/"/>
     <id>https://bookchi.github.io/2019/04/10/其他漏洞/</id>
     <published>2019-04-10T10:51:10.000Z</published>
-    <updated>2019-04-10T10:52:47.747Z</updated>
+    <updated>2019-04-10T10:55:20.700Z</updated>
     
     <summary type="html">
     
