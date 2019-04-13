@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-04-13T01:10:38.204Z</updated>
+  <updated>2019-04-13T03:23:42.106Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>GetShell方法</title>
+    <link href="https://bookchi.github.io/2019/04/13/GetShell%E6%96%B9%E6%B3%95/"/>
+    <id>https://bookchi.github.io/2019/04/13/GetShell方法/</id>
+    <published>2019-04-13T03:22:26.000Z</published>
+    <updated>2019-04-13T03:23:42.106Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;怎么拿shell？渗透测试最终还是要拿权限；这块比较有用；&lt;/p&gt;
+&lt;p&gt;拿到shell之后还要提权，进一步控制服务器，进而对内网进行渗透。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="GetShell" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/GetShell/"/>
+    
+    
+      <category term="getshell" scheme="https://bookchi.github.io/tags/getshell/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JSP相关漏洞概述</title>
     <link href="https://bookchi.github.io/2019/04/13/JSP%E7%9B%B8%E5%85%B3%E6%BC%8F%E6%B4%9E%E6%A6%82%E8%BF%B0/"/>
     <id>https://bookchi.github.io/2019/04/13/JSP相关漏洞概述/</id>
     <published>2019-04-13T01:08:22.000Z</published>
-    <updated>2019-04-13T01:10:38.204Z</updated>
+    <updated>2019-04-13T01:11:07.925Z</updated>
     
     <summary type="html">
     
