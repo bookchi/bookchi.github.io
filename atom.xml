@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-04-22T13:16:30.740Z</updated>
+  <updated>2019-04-27T02:25:01.340Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Oracle-postgresql注入</title>
+    <link href="https://bookchi.github.io/2019/04/27/Oracle-postgresql%E6%B3%A8%E5%85%A5/"/>
+    <id>https://bookchi.github.io/2019/04/27/Oracle-postgresql注入/</id>
+    <published>2019-04-27T02:23:56.000Z</published>
+    <updated>2019-04-27T02:25:01.340Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;航空、物流时会碰到Oracle；比较大的机构一般用这个；因为它比较稳定安全可靠而且贵；&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="SQL注入" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+    
+      <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>后渗透概述</title>
