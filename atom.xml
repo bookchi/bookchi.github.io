@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-04-27T02:25:01.340Z</updated>
+  <updated>2019-04-27T07:40:18.793Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux反弹shell</title>
+    <link href="https://bookchi.github.io/2019/04/27/linux%E5%8F%8D%E5%BC%B9shell/"/>
+    <id>https://bookchi.github.io/2019/04/27/linux反弹shell/</id>
+    <published>2019-04-27T07:37:45.000Z</published>
+    <updated>2019-04-27T07:40:18.793Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;现在，很多木马或者远控软件都用到了所谓的“反弹端口技术”。那么什么是端口反弹，为什么需要端口反弹呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="杂项" scheme="https://bookchi.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+      <category term="端口转发" scheme="https://bookchi.github.io/categories/%E6%9D%82%E9%A1%B9/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/"/>
+    
+    
+      <category term="反弹连接" scheme="https://bookchi.github.io/tags/%E5%8F%8D%E5%BC%B9%E8%BF%9E%E6%8E%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>Oracle-postgresql注入</title>
@@ -432,28 +454,6 @@
     
     
       <category term="工具使用" scheme="https://bookchi.github.io/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mssql注入</title>
-    <link href="https://bookchi.github.io/2019/03/23/mssql%E6%B3%A8%E5%85%A5/"/>
-    <id>https://bookchi.github.io/2019/03/23/mssql注入/</id>
-    <published>2019-03-23T04:51:10.000Z</published>
-    <updated>2019-03-29T09:16:20.370Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;mssql是微软公司开发的一款数据库，应用广泛，它的注入方法与mysql有所不同。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-      <category term="SQL注入" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/SQL%E6%B3%A8%E5%85%A5/"/>
-    
-    
-      <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
     
   </entry>
   
