@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-04-27T07:40:18.793Z</updated>
+  <updated>2019-05-06T12:47:22.510Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TCP/IP协议弱点攻击</title>
+    <link href="https://bookchi.github.io/2019/05/06/TCP-IP%E5%8D%8F%E8%AE%AE%E5%BC%B1%E7%82%B9%E6%94%BB%E5%87%BB/"/>
+    <id>https://bookchi.github.io/2019/05/06/TCP-IP协议弱点攻击/</id>
+    <published>2019-05-06T12:39:21.000Z</published>
+    <updated>2019-05-06T12:47:22.510Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The learning objective of this lab is for students to gain the first-hand experience on the vulnerabilities of TCP/IP protocols, as well as on attacks against these vulnerabilities. The vulnerabilities in the TCP/IP protocols represent a special genre of vulnerabilities in protocol designs and implementations; they provide an invaluable lesson as to why security should be designed in from the beginning, rather than being added as an afterthought. Moreover, studying these vulnerabilities help students understand the challenges of network security and why many network security measures are needed. Vulnerabilities of the TCP/IP protocols occur at several layers.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="协议弱点" scheme="https://bookchi.github.io/categories/%E5%8D%8F%E8%AE%AE%E5%BC%B1%E7%82%B9/"/>
+    
+    
+      <category term="TCP/IP协议" scheme="https://bookchi.github.io/tags/TCP-IP%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>linux反弹shell</title>
@@ -431,29 +451,6 @@
     
     
       <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解析应用程序——BurpSuite爬取站点</title>
-    <link href="https://bookchi.github.io/2019/03/24/%E8%A7%A3%E6%9E%90%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E2%80%94%E7%88%AC%E5%8F%96%E7%AB%99%E7%82%B9/"/>
-    <id>https://bookchi.github.io/2019/03/24/解析应用程序—爬取站点/</id>
-    <published>2019-03-24T06:01:46.000Z</published>
-    <updated>2019-04-02T13:45:26.839Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;攻击应用程序的第一步是收集和分析与他有关的一些关键信息，从而清楚的了解攻击目标。&lt;/p&gt;
-&lt;p&gt;解析过程首先要枚举应用程序的内容与功能，从而了解应用程序的实际功能与运行机制。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-      <category term="工具使用" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-    
-      <category term="工具使用" scheme="https://bookchi.github.io/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
     
   </entry>
   
