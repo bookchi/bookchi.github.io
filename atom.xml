@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-05-06T12:51:26.427Z</updated>
+  <updated>2019-05-29T15:23:32.549Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GoogleXss原理</title>
+    <link href="https://bookchi.github.io/2019/05/29/GoogleXss%E5%8E%9F%E7%90%86/"/>
+    <id>https://bookchi.github.io/2019/05/29/GoogleXss原理/</id>
+    <published>2019-05-29T15:18:31.000Z</published>
+    <updated>2019-05-29T15:23:32.549Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;payload: &lt;code&gt;&amp;lt;noscript&amp;gt;&amp;lt;p title=&amp;quot;&amp;lt;/noscript&amp;gt;&amp;lt;img src=x onerror=alert(1)&amp;gt;&amp;quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;该payload是由一名日本友人发现的，Twitter名叫Masato Kinugawa，感兴趣的同学可以关注一波。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="漏洞" scheme="https://bookchi.github.io/categories/%E6%BC%8F%E6%B4%9E/"/>
+    
+      <category term="XSS" scheme="https://bookchi.github.io/categories/%E6%BC%8F%E6%B4%9E/XSS/"/>
+    
+    
+      <category term="XSS" scheme="https://bookchi.github.io/tags/XSS/"/>
+    
+  </entry>
   
   <entry>
     <title>TCP/IP协议弱点攻击</title>
@@ -388,26 +411,6 @@
     
     
       <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Web缓存欺骗攻击</title>
-    <link href="https://bookchi.github.io/2019/03/26/Web%E7%BC%93%E5%AD%98%E6%AC%BA%E9%AA%97%E6%94%BB%E5%87%BB/"/>
-    <id>https://bookchi.github.io/2019/03/26/Web缓存欺骗攻击/</id>
-    <published>2019-03-26T14:59:35.000Z</published>
-    <updated>2019-03-26T15:16:28.928Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Web缓存欺骗攻击&quot;&gt;&lt;a href=&quot;#Web缓存欺骗攻击&quot; class=&quot;headerlink&quot; title=&quot;Web缓存欺骗攻击&quot;&gt;&lt;/a&gt;Web缓存欺骗攻击&lt;/h3&gt;&lt;p&gt;Web缓存欺骗攻击是一种攻击方式，原理就是Web应用在使用缓存时没有正确验证，从而使攻击者实现了缓存泄露攻击。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-      <category term="Web缓存欺骗" scheme="https://bookchi.github.io/tags/Web%E7%BC%93%E5%AD%98%E6%AC%BA%E9%AA%97/"/>
     
   </entry>
   
