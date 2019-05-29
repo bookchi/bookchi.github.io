@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="The learning objective of this lab is for students to gain the first-hand experience on the vulnerabilities of TCP/IP protocols, as well as on attacks against these vulnerabilities. The vulnerabilitie">
+  <meta name="description" content="The learning objective of this lab is for students to gain the first-hand experience on the vulnerabilities of TCP/IP protocols, as well as on attacks against these vulnerabilities.">
 <meta name="keywords" content="TCPIP协议">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP&#x2F;IP协议弱点攻击">
 <meta property="og:url" content="https://bookchi.github.io/2019/05/06/TCPIP协议弱点攻击/index.html">
 <meta property="og:site_name" content="fuubar2">
-<meta property="og:description" content="The learning objective of this lab is for students to gain the first-hand experience on the vulnerabilities of TCP/IP protocols, as well as on attacks against these vulnerabilities. The vulnerabilitie">
+<meta property="og:description" content="The learning objective of this lab is for students to gain the first-hand experience on the vulnerabilities of TCP/IP protocols, as well as on attacks against these vulnerabilities.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-06T12:51:26.427Z">
+<meta property="og:updated_time" content="2019-05-29T15:25:49.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP&#x2F;IP协议弱点攻击">
-<meta name="twitter:description" content="The learning objective of this lab is for students to gain the first-hand experience on the vulnerabilities of TCP/IP protocols, as well as on attacks against these vulnerabilities. The vulnerabilitie">
+<meta name="twitter:description" content="The learning objective of this lab is for students to gain the first-hand experience on the vulnerabilities of TCP/IP protocols, as well as on attacks against these vulnerabilities.">
 
 
 
@@ -342,12 +342,24 @@
                 
               
 
-              <time title="Created: 2019-05-06 20:39:21 / Modified: 20:51:26" itemprop="dateCreated datePublished" datetime="2019-05-06T20:39:21+08:00">2019-05-06</time>
+              <time title="Created: 2019-05-06 20:39:21" itemprop="dateCreated datePublished" datetime="2019-05-06T20:39:21+08:00">2019-05-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-29 23:25:49" itemprop="dateModified" datetime="2019-05-29T23:25:49+08:00">2019-05-29</time>
               
             
           </span>
@@ -398,8 +410,7 @@
       
 
       
-        <p>The learning objective of this lab is for students to gain the first-hand experience on the vulnerabilities of TCP/IP protocols, as well as on attacks against these vulnerabilities. The vulnerabilities in the TCP/IP protocols represent a special genre of vulnerabilities in protocol designs and implementations; they provide an invaluable lesson as to why security should be designed in from the beginning, rather than being added as an afterthought. Moreover, studying these vulnerabilities help students understand the challenges of network security and why many network security measures are needed. Vulnerabilities of the TCP/IP protocols occur at several layers.</p>
-<a id="more"></a>
+        <p>The learning objective of this lab is for students to gain the first-hand experience on the vulnerabilities of TCP/IP protocols, as well as on attacks against these vulnerabilities.<a id="more"></a> The vulnerabilities in the TCP/IP protocols represent a special genre of vulnerabilities in protocol designs and implementations; they provide an invaluable lesson as to why security should be designed in from the beginning, rather than being added as an afterthought. Moreover, studying these vulnerabilities help students understand the challenges of network security and why many network security measures are needed. Vulnerabilities of the TCP/IP protocols occur at several layers.</p>
 <h3 id="1-ARP-cache-poisoning"><a href="#1-ARP-cache-poisoning" class="headerlink" title="1 ARP cache poisoning"></a>1 ARP cache poisoning</h3><p>The ARP cache is an important part of the ARP protocol. Once a mapping between a MAC address and an IP<br>address is resolved as the result of executing the ARP protocol, the mapping will be cached. Therefore, there is no need to repeat the ARP protocol if the mapping is already in the cache. However, because the ARP protocol is stateless, the cache can be easily poisoned by maliciously crafted ARP messages. Such an attack is called the ARP cache poisoning attack.<br>In such an attack, attackers use spoofed ARP messages to trick the victim to accept an invalid MAC-to-IP<br>mapping, and store the mapping in its cache. There can be various types of consequences depending on the motives of the attackers. For example, attackers can launch a DoS attack against a victim by associating a nonexistent MAC address to the IP address of the victim’s default gateway; attackers can also redirect the traffic to and from the victim to another machine, etc.</p>
 <h3 id="2-ICMP-Redirect-Attack"><a href="#2-ICMP-Redirect-Attack" class="headerlink" title="2 ICMP Redirect Attack"></a>2 ICMP Redirect Attack</h3><p>The ICMP redirect message is used by routers to provide the up-to-date routing information to hosts, which initially have minimal routing information. When a host receives an ICMP redirect message, it will modify its routing table according to the message. Because of the lack of validation, if attackers want the victim to set its routing information in a particular way, they can send spoofed ICMP redirect messages to the victim, and trick the victim to modify its routing table.</p>
 <h3 id="3-SYN-Flooding-Attack"><a href="#3-SYN-Flooding-Attack" class="headerlink" title="3 SYN Flooding Attack"></a>3 SYN Flooding Attack</h3><p>SYN flood is a form of DoS attack in which attackers send many SYN requests to a victim’s TCP port, but the<br>attackers have no intention to finish the 3-way handshake procedure. Attackers either use spoofed IP address or do not continue the procedure. Through this attack, attackers can flood the victim’s queue that is used for half-opened connections, i.e. the connections that has finished SYN, SYN-ACK, but has not yet got a final ACK back. When this queue is full, the victim cannot take any more connection. </p>
@@ -426,7 +437,7 @@
   <p><span>本文标题:</span><a href="/2019/05/06/TCPIP协议弱点攻击/">TCP/IP协议弱点攻击</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 fuubar 的个人博客">fuubar</a></p>
   <p><span>发布时间:</span>2019年05月06日 - 20:05</p>
-  <p><span>最后更新:</span>2019年05月06日 - 20:05</p>
+  <p><span>最后更新:</span>2019年05月29日 - 23:05</p>
   <p><span>原始链接:</span><a href="/2019/05/06/TCPIP协议弱点攻击/" title="TCP/IP协议弱点攻击">https://bookchi.github.io/2019/05/06/TCPIP协议弱点攻击/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/05/06/TCPIP协议弱点攻击/"  aria-label="复制成功！"></i></span>
   </p>
