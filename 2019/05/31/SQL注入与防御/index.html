@@ -116,13 +116,13 @@
 <meta property="og:site_name" content="fuubar2">
 <meta property="og:description" content="大多注入攻击的本质，都是把用户输入的数据当做代码执行。因此这里需要两个关键条件：用户能够控制输入；原程序要执行的代码，拼接了用户的输入。这篇博客介绍几种SQL注入攻击和防御办法。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://bookchi.github.io/2019/05/31/SQL注入与防御/E:/Web安全/mdDoc/assets/1559202326277.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/05/31/SQL注入与防御/E:/Web安全/mdDoc/assets/1559203013610.png">
-<meta property="og:updated_time" content="2019-05-31T08:52:08.539Z">
+<meta property="og:image" content="https://bookchi.github.io/2019/05/31/SQL注入与防御/1559202326277.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/05/31/SQL注入与防御/1559203013610.png">
+<meta property="og:updated_time" content="2019-05-31T08:55:07.036Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL注入与防御">
 <meta name="twitter:description" content="大多注入攻击的本质，都是把用户输入的数据当做代码执行。因此这里需要两个关键条件：用户能够控制输入；原程序要执行的代码，拼接了用户的输入。这篇博客介绍几种SQL注入攻击和防御办法。">
-<meta name="twitter:image" content="https://bookchi.github.io/2019/05/31/SQL注入与防御/E:/Web安全/mdDoc/assets/1559202326277.png">
+<meta name="twitter:image" content="https://bookchi.github.io/2019/05/31/SQL注入与防御/1559202326277.png">
 
 
 
@@ -345,7 +345,7 @@
                 
               
 
-              <time title="Created: 2019-05-31 16:46:06 / Modified: 16:52:08" itemprop="dateCreated datePublished" datetime="2019-05-31T16:46:06+08:00">2019-05-31</time>
+              <time title="Created: 2019-05-31 16:46:06 / Modified: 16:55:07" itemprop="dateCreated datePublished" datetime="2019-05-31T16:46:06+08:00">2019-05-31</time>
             
 
             
@@ -482,10 +482,10 @@
 <p>如果Web语言没要考虑双字节字符的问题，双字节字符会被认为成两个字节。</p>
 <h4 id="2-5-column-truncation"><a href="#2-5-column-truncation" class="headerlink" title="2.5 column truncation"></a>2.5 column truncation</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> @@sql_mode</span><br><span class="line"><span class="keyword">SET</span> @@sql_mode=<span class="string">"strict_trans_tables,no_auto_create_user,no_engine_substitution"</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tests(username,passwd) <span class="keyword">values</span>(<span class="string">"admin                                    x"</span>,<span class="string">"</span></span><br><span class="line"><span class="string">		new_pass"</span>)</span><br></pre></td></tr></table></figure>
 <p>会显示数据过长的error，从而中断插入操作：</p>
-<p><img src="/2019/05/31/SQL注入与防御/E:/Web安全\mdDoc\assets\1559202326277.png" alt="1559202326277"></p>
+<p><img src="/2019/05/31/SQL注入与防御/1559202326277.png" alt="1559202326277"></p>
 <p>但是如果把strict模式关掉，就可以插入了。这样会导致什么后果呢？</p>
 <p>比如会导致截断，假设我插入了一个超长的username：admin(20个空格)x和密码，由于空格导致的截断，会以为它与admin同名，这样就有了自己设置的密码。插入的结果如下：</p>
-<p><img src="/2019/05/31/SQL注入与防御/E:/Web安全\mdDoc\assets\1559203013610.png" alt="1559203013610"></p>
+<p><img src="/2019/05/31/SQL注入与防御/1559203013610.png" alt="1559203013610"></p>
 <p>如果之后只是通过用户名来查找信息，那么就会造成越权漏洞。</p>
 <blockquote>
 <p>首先能否造成截断先不谈</p>
