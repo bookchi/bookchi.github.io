@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-05-29T15:23:32.549Z</updated>
+  <updated>2019-05-31T08:52:08.539Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL注入与防御</title>
+    <link href="https://bookchi.github.io/2019/05/31/SQL%E6%B3%A8%E5%85%A5%E4%B8%8E%E9%98%B2%E5%BE%A1/"/>
+    <id>https://bookchi.github.io/2019/05/31/SQL注入与防御/</id>
+    <published>2019-05-31T08:46:06.000Z</published>
+    <updated>2019-05-31T08:52:08.539Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大多注入攻击的本质，都是把用户输入的数据当做代码执行。因此这里需要两个关键条件：用户能够控制输入；原程序要执行的代码，拼接了用户的输入。这篇博客介绍几种SQL注入攻击和防御办法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+      <category term="SQL注入" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+    
+      <category term="SQL注入" scheme="https://bookchi.github.io/tags/SQL%E6%B3%A8%E5%85%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>GoogleXss原理</title>
@@ -431,29 +453,6 @@
     
     
       <category term="buffer overflow" scheme="https://bookchi.github.io/tags/buffer-overflow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql注入</title>
-    <link href="https://bookchi.github.io/2019/03/24/mysql%E6%B3%A8%E5%85%A5/"/>
-    <id>https://bookchi.github.io/2019/03/24/mysql注入/</id>
-    <published>2019-03-24T09:27:02.000Z</published>
-    <updated>2019-03-29T09:10:29.907Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;mysql介绍及操作&quot;&gt;&lt;a href=&quot;#mysql介绍及操作&quot; class=&quot;headerlink&quot; title=&quot;mysql介绍及操作&quot;&gt;&lt;/a&gt;mysql介绍及操作&lt;/h4&gt;&lt;p&gt;增删语句&lt;/p&gt;
-&lt;p&gt;information_schema是一个很重要的库，information_schema.tables&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Web安全" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-      <category term="SQL注入" scheme="https://bookchi.github.io/categories/Web%E5%AE%89%E5%85%A8/SQL%E6%B3%A8%E5%85%A5/"/>
-    
-    
-      <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
     
   </entry>
   
