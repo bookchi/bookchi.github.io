@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-05-31T08:55:07.036Z</updated>
+  <updated>2019-06-11T10:53:21.070Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iptables防火墙配置</title>
+    <link href="https://bookchi.github.io/2019/06/11/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E9%85%8D%E7%BD%AE/"/>
+    <id>https://bookchi.github.io/2019/06/11/iptables防火墙配置/</id>
+    <published>2019-06-11T10:47:11.000Z</published>
+    <updated>2019-06-11T10:53:21.070Z</updated>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;Iptables是在Linux内核中的一个防火墙，今天写这篇博客是为了记录某个实验中对防火墙所需做的配置和过程中遇到的报错。
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="网络安全实验" scheme="https://bookchi.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C/"/>
+    
+      <category term="防火墙" scheme="https://bookchi.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%AE%9E%E9%AA%8C/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
+    
+      <category term="防火墙" scheme="https://bookchi.github.io/tags/%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL注入与防御</title>
@@ -433,26 +456,6 @@
     
     
       <category term="sql注入" scheme="https://bookchi.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>bufferoverflow原理</title>
-    <link href="https://bookchi.github.io/2019/03/25/bufferoverflow%E5%8E%9F%E7%90%86/"/>
-    <id>https://bookchi.github.io/2019/03/25/bufferoverflow原理/</id>
-    <published>2019-03-25T13:03:41.000Z</published>
-    <updated>2019-03-29T09:15:13.335Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;buffer overflow是一种很古老的攻击手段，但是它的危害并不因此而减小。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="BufferOverflow" scheme="https://bookchi.github.io/categories/BufferOverflow/"/>
-    
-    
-      <category term="buffer overflow" scheme="https://bookchi.github.io/tags/buffer-overflow/"/>
     
   </entry>
   
