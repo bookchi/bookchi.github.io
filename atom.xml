@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://bookchi.github.io/"/>
-  <updated>2019-06-11T10:53:21.070Z</updated>
+  <updated>2019-06-11T10:55:33.036Z</updated>
   <id>https://bookchi.github.io/</id>
   
   <author>
@@ -21,12 +21,11 @@
     <link href="https://bookchi.github.io/2019/06/11/iptables%E9%98%B2%E7%81%AB%E5%A2%99%E9%85%8D%E7%BD%AE/"/>
     <id>https://bookchi.github.io/2019/06/11/iptables防火墙配置/</id>
     <published>2019-06-11T10:47:11.000Z</published>
-    <updated>2019-06-11T10:53:21.070Z</updated>
+    <updated>2019-06-11T10:55:33.036Z</updated>
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code&gt;Iptables是在Linux内核中的一个防火墙，今天写这篇博客是为了记录某个实验中对防火墙所需做的配置和过程中遇到的报错。
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;p&gt; Iptables是在Linux内核中的一个防火墙，今天写这篇博客是为了记录某个实验中对防火墙所需做的配置和过程中遇到的报错。&lt;/p&gt;
     
     </summary>
     
