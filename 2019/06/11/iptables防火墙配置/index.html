@@ -116,25 +116,25 @@
 <meta property="og:site_name" content="fuubar2">
 <meta property="og:description" content="Iptables是在Linux内核中的一个防火墙，今天写这篇博客是为了记录某个实验中对防火墙所需做的配置和过程中遇到的报错。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560212601237.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560212992279.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560212960553.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560176611570.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560213928133.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560156953394.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560156971926.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560170482600.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560175170816.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560174985948.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560175698520.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560176816404.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560175741155.png">
-<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560215766169.png">
-<meta property="og:updated_time" content="2019-06-11T10:55:33.036Z">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560212601237.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560212992279.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560212960553.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560176611570.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560213928133.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560156953394.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560156971926.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560170482600.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560175170816.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560174985948.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560175698520.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560176816404.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560175741155.png">
+<meta property="og:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560215766169.png">
+<meta property="og:updated_time" content="2019-06-11T11:00:25.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iptables防火墙配置">
 <meta name="twitter:description" content="Iptables是在Linux内核中的一个防火墙，今天写这篇博客是为了记录某个实验中对防火墙所需做的配置和过程中遇到的报错。">
-<meta name="twitter:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560212601237.png">
+<meta name="twitter:image" content="https://bookchi.github.io/2019/06/11/iptables防火墙配置/1560212601237.png">
 
 
 
@@ -357,7 +357,7 @@
                 
               
 
-              <time title="Created: 2019-06-11 18:47:11 / Modified: 18:55:33" itemprop="dateCreated datePublished" datetime="2019-06-11T18:47:11+08:00">2019-06-11</time>
+              <time title="Created: 2019-06-11 18:47:11 / Modified: 19:00:25" itemprop="dateCreated datePublished" datetime="2019-06-11T18:47:11+08:00">2019-06-11</time>
             
 
             
@@ -426,12 +426,12 @@
 <p>虚拟机：VMware Workstation 14 pro</p>
 <p>虚拟机镜像：Ubuntu 16、Ubuntu 18</p>
 <p>网络拓扑：</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560212601237.png" width="600px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560212601237.png" width="600px"></p>
 <h4 id="1-1-2-配置步骤："><a href="#1-1-2-配置步骤：" class="headerlink" title="1.1.2 配置步骤："></a>1.1.2 配置步骤：</h4><ol>
 <li><p>配置m2，创建两个网卡</p>
 <ul>
 <li><p>编辑虚拟机设置-&gt;添加网络适配器。一块网卡设置为桥接模式，用于和外网通信；另一块设置为仅主机模式，用于和内网通信。</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560212992279.png" width="400px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560212992279.png" width="400px"></p>
 </li>
 <li><p>查看m2的网络信息</p>
 <p>使用<code>ifconfig</code>查看m2网卡信息：</p>
@@ -451,7 +451,7 @@
 <p>m1和m3的配置类似，这里就以m1的配置为例。</p>
 <ul>
 <li><p>编辑虚拟机设置-&gt;网络适配器改为仅主机模式</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560212960553.png" width="400px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560212960553.png" width="400px"></p>
 </li>
 <li><p>查看m1网卡信息</p>
 <p>打开虚拟机，通过<code>ifconfig</code>命令查看网卡信息。</p>
@@ -462,7 +462,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 打开网卡配置文件</span><br><span class="line">sudo vim /etc/network/interfaces</span><br><span class="line"><span class="meta">#</span> 设置静态IP，修改网关</span><br><span class="line">auto ens33 </span><br><span class="line">iface ens33 inet static</span><br><span class="line">address 192.168.119.128</span><br><span class="line">netmask 255.255.255.0</span><br><span class="line">gateway 192.168.119.129</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>保存重启虚拟机，使用<code>route -n</code>命令查看网关：</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560176611570.png" width="600px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560176611570.png" width="600px"></p>
 </li>
 </ul>
 </li>
@@ -471,11 +471,11 @@
 <h3 id="1-2-环境测试"><a href="#1-2-环境测试" class="headerlink" title="1.2 环境测试"></a>1.2 环境测试</h3><pre><code>这里还是以m1作为代表进行测试。
 </code></pre><ul>
 <li><p>外网主机访问m1、m2的内网地址和m2的外网地址</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560213928133.png" width="600px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560213928133.png" width="600px"></p>
 <p>发现只有m2的外网地址可以ping通，其他两者都ping不同，说明配置正确。</p>
 </li>
 <li><p>内网主机m1访问外网</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560156953394.png" width="600px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560156953394.png" width="600px"></p>
 <p>m1无法访问外网。</p>
 </li>
 </ul>
@@ -484,13 +484,13 @@
 <p>使用如下命令添加规则：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iptables -t nat -A POSTROUTING -s 192.168.119.128,192.168.119.130 -j MASQUERADE</span><br></pre></td></tr></table></figure>
 <p>结果如下：</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560156971926.png" width="600px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560156971926.png" width="600px"></p>
 </li>
 <li><p>m1,m3对外网仅允许ssh</p>
 <p>具体命令如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ssh可连接外网</span><br><span class="line">sudo iptables -A FORWARD -s 192.168.119.128,192.168.119.130 -p tcp --dport 22 -j ACCEPT</span><br><span class="line"><span class="meta">#</span> 外网的ssh数据可返回</span><br><span class="line">sudo iptables -A  FORWARD -p tcp --sport 22 -j ACCEPT  </span><br><span class="line"><span class="meta">#</span> 其他的不可出</span><br><span class="line">sudo iptables -A FORWARD ! -d 192.168.119.0/24 -j DROP</span><br></pre></td></tr></table></figure>
 <p>m1上效果如下：</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560170482600.png" width="600px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560170482600.png" width="600px"></p>
 <p>观察到，m1访问外网时，只允许ssh。而其他的均不允许，ping和ftp都无法成功。m3同理。</p>
 </li>
 </ul>
@@ -510,11 +510,11 @@
 <p>配置完以上<code>iptables</code>规则后，进行效果测试，结果如下：</p>
 <ul>
 <li><p>m2和内网通信，只有ssh是被允许的</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560175170816.png" width="600px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560175170816.png" width="600px"></p>
 <p>可以观察到，只有ssh可以连接成功，ftp和ping都无法成功。</p>
 </li>
 <li><p>m2和外网通信，只有ssh是被允许的</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560174985948.png" width="600px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560174985948.png" width="600px"></p>
 <p>可以观察到，只有ssh可以连接成功，ftp和ping都无法成功。</p>
 </li>
 </ul>
@@ -532,20 +532,20 @@
 <p>配置完以上<code>iptables</code>规则后，进行效果测试，结果如下：</p>
 <ul>
 <li><p>m1可以对外网主机建立ssh连接</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560175698520.png" width="600px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560175698520.png" width="600px"></p>
 </li>
 <li><p>m3不可以对外网主机建立ssh连接</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560176816404.png" width="600px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560176816404.png" width="600px"></p>
 </li>
 <li><p>其他的流量都被拒绝</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560175741155.png" width="600px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560175741155.png" width="600px"></p>
 </li>
 </ul>
 <h2 id="3-可能的报错"><a href="#3-可能的报错" class="headerlink" title="3 可能的报错"></a>3 可能的报错</h2><p>本实验是为了解iptables的规则配置。在配置过程中，遇到了一些问题。</p>
 <ul>
 <li><p>使用<code>! --dport 22</code>时报错</p>
 <p>为了丢弃非ssh流量，需要表示不是22端口的流量。然而当使用<code>! --dport 22</code>命令时却会报错。经过<code>man iptables</code>查阅官方手册找到了原因。</p>
-<p><img src="/2019/06/11/iptables防火墙配置/E:/%E5%A4%A7%E4%B8%89%E4%B8%8B/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/lab/lab5/assets/1560215766169.png" width="500px"></p>
+<p><img src="/2019/06/11/iptables防火墙配置/1560215766169.png" width="500px"></p>
 <pre><code>原因在于`--dport`只是`-p tcp/udp`的一个扩展，前面必须要有`-p`才可。因此要丢弃非ssh流量，不能把思路局限于此处。
 </code></pre></li>
 <li><p>内网环境配置失败</p>
@@ -574,7 +574,7 @@
   <p><span>本文标题:</span><a href="/2019/06/11/iptables防火墙配置/">iptables防火墙配置</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 fuubar 的个人博客">fuubar</a></p>
   <p><span>发布时间:</span>2019年06月11日 - 18:06</p>
-  <p><span>最后更新:</span>2019年06月11日 - 18:06</p>
+  <p><span>最后更新:</span>2019年06月11日 - 19:06</p>
   <p><span>原始链接:</span><a href="/2019/06/11/iptables防火墙配置/" title="iptables防火墙配置">https://bookchi.github.io/2019/06/11/iptables防火墙配置/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://bookchi.github.io/2019/06/11/iptables防火墙配置/"  aria-label="复制成功！"></i></span>
   </p>
